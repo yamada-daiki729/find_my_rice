@@ -50,6 +50,9 @@
   ■画面遷移図
   https://www.figma.com/file/4JNibTJxm8QNvDMYOyIwdc/%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0%3A1&t=dz5exWvObnJz3wEJ-1
 
+  ■ER図
+  https://gyazo.com/2fe2b1d3f9e3b68fa766fb5d8ada0b41
+
 
 　■スケジュール
 　企画〜技術調査：12/24〆切

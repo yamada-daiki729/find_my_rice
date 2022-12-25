@@ -1,0 +1,83 @@
+erDiagram
+
+users ||--o{ rice_favorites : ""
+users ||--o{ No1_my_rankings : ""
+users ||--o{ No2_my_rankings : ""
+users ||--o{ No3_my_rankings : ""
+
+rices ||--o{ No1_my_rankings : ""
+rices ||--o{ No2_my_rankings : ""
+rices ||--o{ No3_my_rankings : ""
+rices ||--o{ rice_favorites : ""
+rices ||--|{ rice_prefectures : ""
+rices ||--|| rice_status : ""
+
+prefectures ||--|{ rice_prefectures : ""
+
+users {
+  bigint id PK
+  string name
+  string email
+  string crypted_password
+  string salt
+  int role
+
+}
+
+rice_favorites {
+  int id PK
+  int user_id FK
+  int rice_id FK
+
+}
+
+rices {
+  int id PK
+  int prefecture_id FK
+  string name
+  string characteristic
+
+}
+
+No1_my_rankings {
+  int id PK
+  int user_id FK
+  int rice_id FK
+
+}
+
+No2_my_rankings {
+  int id PK
+  int user_id FK
+  int rice_id FK
+
+}
+
+No3_my_rankings {
+  int id PK
+  int user_id FK
+  int rice_id FK
+
+}
+
+
+rice_status {
+  int id PK
+  int rice_id Fk
+  int hardness
+  int softness
+  int sweetness
+  int freshness
+
+}
+
+prefectures{
+    int id PK
+    int name
+}
+
+rice_prefectures {
+    int id PK
+    int rice_id FK
+    int prefecture_id FK
+}
