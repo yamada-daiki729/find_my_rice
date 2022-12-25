@@ -1,0 +1,60 @@
+erDiagram
+
+users ||--o{ rice_favorites : ""
+users ||--o{ user_rankings: ""
+
+rices ||--o{ user_rankings : ""
+rices ||--o{ rice_favorites : ""
+rices ||--|| rice_status : ""
+
+prefectures||--|{ rices : ""
+
+users {
+  bigint id PK
+  string name
+  string email
+  string crypted_password
+  string salt
+  int role
+
+}
+
+rice_favorites {
+  int id PK
+  int user_id FK
+  int rice_id FK
+
+}
+
+rices {
+  int id PK
+  int prefecture_id FK
+  int prefectuer_id FK
+  string name
+  string characteristic
+
+}
+
+user_rankings {
+  int id PK
+  int user_id FK
+  int rice_id FK
+  int rank
+
+}
+
+
+rice_status {
+  int id PK
+  int rice_id Fk
+  int hardness
+  int softness
+  int sweetness
+  int freshness
+
+}
+
+prefectures{
+    int id PK
+    int name
+}
