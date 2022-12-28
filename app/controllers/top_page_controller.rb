@@ -1,4 +1,3 @@
 class TopPageController < ApplicationController
-  def top
-  end
+  def top;end
 end
