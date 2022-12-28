@@ -1,6 +1,7 @@
 <h1> user_new </h1>
 
 <%= form_with model: @user , local: true do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
   <div>
     <%= f.label :email %>
     <%= f.text_field :email %>
