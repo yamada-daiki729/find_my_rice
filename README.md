@@ -52,7 +52,7 @@
   https://www.figma.com/file/4JNibTJxm8QNvDMYOyIwdc/%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0%3A1&t=dz5exWvObnJz3wEJ-1
 
   ■ER図
-  https://gyazo.com/2fe2b1d3f9e3b68fa766fb5d8ada0b41
+  https://gyazo.com/3e609e3327300ce48105cf11151fb36f
 
 
 　■スケジュール
