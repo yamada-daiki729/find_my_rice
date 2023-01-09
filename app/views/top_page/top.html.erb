@@ -1,7 +1,9 @@
-<h1> ここからトップページ </h1>
-<h3> 色々な特徴のお米を知り、食べてみませんか？</h3>
-<%= current_user.name if logged_in? %>
+<div class="border" >
+  <h1 class="text-red-500 text-9xl" > ここからトップページ </h1>
+  <h3 > 色々な特徴のお米を知り、食べてみませんか？</h3>
+  <%= current_user.name if logged_in? %>
 
-<%= link_to "全国のお米を探しに行く", "#" %>
-<br>
-<%= link_to "ユーザー登録", new_users_path %>
+  <%= link_to "全国のお米を探しに行く", "#" %>
+  <br>
+  <%= link_to "ユーザー登録", new_users_path %>
+</div>
