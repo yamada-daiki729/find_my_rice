@@ -1,5 +1,10 @@
 <%= link_to "Find_My_rice",root_path %>
 <%= link_to "全国おこめ地図", "#" %>
 <%= link_to "お米総選挙", "#" %>
-<%= link_to "ログイン", "#" %>
+<% if logged_in? %>
+  <%= link_to "ログアウト", logout_path, method: :delete %>
+<% else %>
+  <%= link_to "ログイン", login_path %>
+<% end %>
+
 <p> ここまでがヘッダー
