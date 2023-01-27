@@ -2,3 +2,13 @@
   <h1 > 全国お米地図のページだよ </h1>
   <div id="jmap"></div>
 </div>
+<div class="border-solid border-4 border-light-blue-500 ..." >
+  <% @rices.each do |rice| %>
+    <%= rice.name %>
+    <br>
+    <% rice.prefectures.each do |prefecture| %>
+      <%= prefecture.name %>
+    <% end%>
+    <br>
+  <% end %>
+</div>
