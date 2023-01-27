@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy', as: 'logout'
 
-  get 'rice_map', to: 'rice_map_page#rice_map'
+  get 'rice_map', to: 'rices#rice_map'
+  resources :rices, only: %i[show]
 end

@@ -4,7 +4,7 @@
 </div>
 <div class="border-solid border-4 border-light-blue-500 ..." >
   <% @rices.each do |rice| %>
-    <%= rice.name %>
+    <%= link_to rice.name, rice_path(rice) %>
     <br>
     <% rice.prefectures.each do |prefecture| %>
       <%= prefecture.name %>
