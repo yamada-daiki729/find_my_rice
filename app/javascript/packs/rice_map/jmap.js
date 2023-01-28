@@ -8,9 +8,7 @@
  * Date: 2020-04-01T12:23:34.356Z
  */
 ;
-$(document).ready(function () {
-    $('#jmap').jmap();
-});
+console.log('jmap');
 (function ($) {
 
     // Identifiers
@@ -208,7 +206,7 @@ $(document).ready(function () {
         }
 
     };
-
+    //こいつが何故か使えない
     $.fn.jmap = function (options) {
 
         if (options == 'update') {
