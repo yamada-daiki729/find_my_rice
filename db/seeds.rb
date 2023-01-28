@@ -28,3 +28,10 @@ RicePrefecture.create!(
     { rice_id: 2, prefecture_id: 8 }
   ]
 )
+
+RiceStatus.create!(
+  [
+    { rice_id: 1 , hardress: 0, softness: 3, sweetness: 3, freshness:0},
+    { rice_id: 2 , hardress: 0, softness: 1, sweetness: 0, freshness:2}
+  ]
+)

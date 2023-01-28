@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_26_135412) do
+ActiveRecord::Schema.define(version: 2023_01_27_060727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,17 @@ ActiveRecord::Schema.define(version: 2023_01_26_135412) do
     t.index ["rice_id"], name: "index_rice_prefectures_on_rice_id"
   end
 
+  create_table "rice_statuses", force: :cascade do |t|
+    t.bigint "rice_id", null: false
+    t.integer "hardress"
+    t.integer "softness"
+    t.integer "sweetness"
+    t.integer "freshness"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["rice_id"], name: "index_rice_statuses_on_rice_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "crypted_password"
@@ -49,4 +60,5 @@ ActiveRecord::Schema.define(version: 2023_01_26_135412) do
 
   add_foreign_key "rice_prefectures", "prefectures"
   add_foreign_key "rice_prefectures", "rice"
+  add_foreign_key "rice_statuses", "rice"
 end
