@@ -37,8 +37,8 @@
   <% end %>
 </div>
 
+<div id="passVariable" data-rices="<%= @rices.to_json %>" data-prefectures="<%= @prefectures.to_json %>" data-rice-prefectures="<%= @rice_prefectures.to_json %>"> </div>
 <script>
-console.log('jmap');
 (function ($) {
 
     // Identifiers
@@ -236,7 +236,6 @@ console.log('jmap');
         }
 
     };
-    //こいつが何故か使えない
     $.fn.jmap = function (options) {
 
         if (options == 'update') {
@@ -926,7 +925,7 @@ $(document).ready(function () {
     fontColor: '#000',
     font: 'serif',
     areas: [ //モーダルの中に出力されるデータ
-      { code: 1, name: "北", color: "#759ef4", hoverColor: "#b3b2ee" },
+      { code: 1, name: "北街道", color: "#759ef4", hoverColor: "#b3b2ee" },
       { code: 2, name: "青森", color: "#759ef4", hoverColor: "#98b9ff" },
       { code: 3, name: "岩手", color: "#759ef4", hoverColor: "#98b9ff" },
       { code: 4, name: "宮城", color: "#759ef4", hoverColor: "#98b9ff" },
@@ -978,23 +977,53 @@ $(document).ready(function () {
       $(this).html('<strong>' + data.name + '</strong>');
     },
     onSelect: function (e, data) {
-      $('#prefectureModal').find('#prefectureModalTitle')
-        .html(data.area8.name + " - " + data.area11.name + " - " + data.name + data.full) // モーダルの中身のhtml要素
-        .end().find('.modal-body')
-        .html(JSON.stringify(data, null, 4))
-        .end().show()
-        .addClass('show');
+        // 都道府県がクリックされた時にクリックされた都道府県のお米情報を取得する
+        var rices = $('#passVariable').data('rices');
+        var prefectures = $('#passVariable').data('prefectures');
+        var ricePrefectures = $('#passVariable').data('rice-prefectures');
+        var prefectureRices = [];
+        serchPrefectureRices(rices,prefectures,ricePrefectures);
+        function serchPrefectureRices (rices,prefectures,ricePrefectures ) {
+            var prefectureRiceIds = [];
+            //選択された都道府県のお米IDを取得する
+            $.each(ricePrefectures, function(index,val) {
+                // console.log('これのデータ',val);
+                // console.log('dataコードの確認',data.code)
+                if (val.prefecture_id == data.code) {
+                    prefectureRiceIds.push(val.rice_id)
+                };
+            });
+            //取得したお米IDでお米の情報をprefectureRicesに格納する
+            $.each(prefectureRiceIds, function(index,riceId){
+                $.each(rices, function(index,rice){
+                    if (riceId == rice.id ){
+                        prefectureRices.push(rice);
+                        };
+                });
+            });
+        };
+
+        $('#prefectureModal').find('#prefectureModalTitle').html(data.name + data.full); // モーダルのタイトルのhtml要素
+        $.each(prefectureRices, function (index, rice){ //モーダルボディーにお米の詳細リンクを記載する
+            $('#prefectureModal').find('.modal-body').append(
+                ` <a href="/rices/${rice.id}"> ${rice.name} </a>` + '<br>');
+        });
+        $('#prefectureModal').show()
+        $('#prefectureModal').addClass('show'); //クリックされた時にモーダルを表示するようにクラスを追加する
     },
     onHover: function (e, data) {
       console.log(data);
     }
   });
+    //閉じた時に生成したお米詳細リンクを削除する
   $('#closeIcon').on('click',function () {
     $('#prefectureModal').removeClass('show').hide();
+    $('.modal-body').children().remove();
   });
     $('#closeString').on('click',function () {
-    $('#prefectureModal').removeClass('show').hide();
-  })
+      $('#prefectureModal').removeClass('show').hide();
+      $('.modal-body').children().remove();
+    })
 });
 
 </script>

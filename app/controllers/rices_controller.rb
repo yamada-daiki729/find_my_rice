@@ -1,6 +1,8 @@
 class RicesController < ApplicationController
   def rice_map
-    @rices=Rice.all
+    @rices = Rice.all
+    @prefectures = Prefecture.all
+    @rice_prefectures = RicePrefecture.all
   end
 
   def show
