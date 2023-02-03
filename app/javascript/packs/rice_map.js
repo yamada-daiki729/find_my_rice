@@ -936,37 +936,21 @@ $(document).ready(function () {
       $(this).html('<strong>' + data.name + '</strong>');
     },
     onSelect: function (e, data) {
-      // 都道府県がクリックされた時にクリックされた都道府県のお米情報を取得する
-      var rices = $('#passVariable').data('rices');
-      var prefectures = $('#passVariable').data('prefectures');
-      var ricePrefectures = $('#passVariable').data('rice-prefectures');
-      var prefectureRices = [];
-      serchPrefectureRices(rices, prefectures, ricePrefectures);
-      function serchPrefectureRices(rices, prefectures, ricePrefectures) {
-        var prefectureRiceIds = [];
-        //選択された都道府県のお米IDを取得する
-        $.each(ricePrefectures, function (index, val) {
-          // console.log('これのデータ',val);
-          // console.log('dataコードの確認',data.code)
-          if (val.prefecture_id == data.code) {
-            prefectureRiceIds.push(val.rice_id)
-          };
-        });
-        //取得したお米IDでお米の情報をprefectureRicesに格納する
-        $.each(prefectureRiceIds, function (index, riceId) {
-          $.each(rices, function (index, rice) {
-            if (riceId == rice.id) {
-              prefectureRices.push(rice);
-            };
+      $.ajax({
+        type: 'GET',
+        url: '/rice_map/searches',
+        data: ("prefectureId=" + data.code),
+        dataType: 'json'
+      })
+        // クリックされた都道府県のお米のリンクをhtmlに追加する
+        .done(function (prefectureRices) {
+          $.each(prefectureRices, function (index, rice) { //モーダルボディーにお米の詳細リンクを記載する
+            $('#prefectureModal').find('.modal-body').append(
+              ` <a href="/rices/${rice.id}"> ${rice.name} </a>` + '<br>');
           });
-        });
-      };
+        })
 
       $('#prefectureModal').find('#prefectureModalTitle').html(data.name + data.full); // モーダルのタイトルのhtml要素
-      $.each(prefectureRices, function (index, rice) { //モーダルボディーにお米の詳細リンクを記載する
-        $('#prefectureModal').find('.modal-body').append(
-          ` <a href="/rices/${rice.id}"> ${rice.name} </a>` + '<br>');
-      });
       $('#prefectureModal').show()
       $('#prefectureModal').addClass('show'); //クリックされた時にモーダルを表示するようにクラスを追加する
     },
