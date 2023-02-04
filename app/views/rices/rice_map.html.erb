@@ -38,4 +38,13 @@
   <% end %>
 </div>
 
+<h1>ライス検索</h1>
+<%= search_form_for @q, url: rice_map_path do |f| %>
+  <%= f.label :name_cont, 'お米の品種名' %>
+  <%= f.select :name_cont, Rice.pluck(:name),{include_blank: 'お米の品種名'}%>
+  <%= f.select :prefectures_name_eq, Prefecture.names.map { |k, v| [ k , v ] },{include_blank: '都道府県'}%>
+
+  <%= f.submit '検索' %>
+<% end %>
+
 <%= javascript_pack_tag "rice_map" %>

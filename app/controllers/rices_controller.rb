@@ -1,12 +1,14 @@
 class RicesController < ApplicationController
+  before_action :set_q, only: [:rice_map]
+
   def rice_map
-    @rices = Rice.all
-    @prefectures = Prefecture.all
-    @rice_prefectures = RicePrefecture.all
+    @q = Rice.ransack(params[:q])
+    @rices = @q.result(distinct:true).includes(:prefectures).all
+    # byebug
   end
 
   def show
-    @rice = Rice.find(params[:id])
+    @rice = Rice.find(params[:id]) #あとでprivateに出す
   end
 
   def rice_map_serch
@@ -17,5 +19,17 @@ class RicesController < ApplicationController
       format.json { render json: @map_serch_rices }
     end
   end
+
+  def search
+    @results = @q.result
+  end
+
+  private
+
+  def set_q
+    @q = Rice.ransack(params[:q])
+    byebug
+  end
+
 
 end

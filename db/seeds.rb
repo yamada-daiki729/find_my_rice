@@ -31,7 +31,7 @@ RicePrefecture.create!(
 
 RiceStatus.create!(
   [
-    { rice_id: 1 , hardress: 0, softness: 3, sweetness: 3, freshness:0},
-    { rice_id: 2 , hardress: 0, softness: 1, sweetness: 0, freshness:2}
+    { rice_id: 1 , hardness: 0, softness: 3, sweetness: 3, freshness:0},
+    { rice_id: 2 , hardness: 0, softness: 1, sweetness: 0, freshness:2}
   ]
 )
