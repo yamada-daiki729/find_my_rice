@@ -1,11 +1,30 @@
 class RicesController < ApplicationController
+
   def rice_map
-    @rices = Rice.all
-    @prefectures = Prefecture.all
-    @rice_prefectures = RicePrefecture.all
+    @search_rices_form = SearchRicesForm.new(search_params)
+    @rices = @search_rices_form.search
+    @status_category = [['硬めで甘い',1], ['硬めであっさり',2],['柔らかくて甘い',3],['柔らかくてあっさり',4]]
+
   end
 
   def show
-    @rice = Rice.find(params[:id])
+    @rice = Rice.find(params[:id]) #あとでprivateに出す
   end
+
+  def rice_map_serch
+    @map_serch_rices = Rice.includes(:prefectures).where(rice_prefectures:{prefecture_id: params[:prefectureId].to_i})
+    respond_to do |format|
+      format.html { redirect_to :root }
+      # ↓検索結果のデータをレスポンスするコード
+      format.json { render json: @map_serch_rices }
+    end
+  end
+
+
+  private
+
+  def search_params
+    params[:q]&.permit(:name, :rice_prefecture, :status_category)
+  end
+
 end

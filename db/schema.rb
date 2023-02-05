@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2023_01_27_060727) do
 
   create_table "rice_statuses", force: :cascade do |t|
     t.bigint "rice_id", null: false
-    t.integer "hardress"
+    t.integer "hardness"
     t.integer "softness"
     t.integer "sweetness"
     t.integer "freshness"

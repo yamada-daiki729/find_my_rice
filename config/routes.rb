@@ -9,5 +9,10 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy', as: 'logout'
 
   get 'rice_map', to: 'rices#rice_map'
-  resources :rices, only: %i[show]
+  get 'rice_map/searches', to: 'rices#rice_map_serch', defaults: { format: :json }
+  resources :rices, only: %i[show] do
+    collection do
+      get 'search'
+    end
+  end
 end
