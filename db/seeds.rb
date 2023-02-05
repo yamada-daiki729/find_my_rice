@@ -18,6 +18,11 @@ Rice.create!(
     { name: 'コシヒカリ', characteristic: 'コシがあって粘りがつよい' },
     { name: 'あきたこまち', characteristic: 'あきたの代表銘柄' },
     { name: 'ふさおとめ', characteristic: 'さっぱり系の千葉のお米' },
+    { name: 'ひとめぼれ', characteristic: 'ひとめぼれだよ' },
+    { name: 'つや姫', characteristic: 'つや姫だよ' },
+    { name: 'ゆめぴりか', characteristic: 'ゆめぴりかだよ' }
+
+
   ]
 )
 
@@ -25,13 +30,21 @@ RicePrefecture.create!(
   [
     { rice_id: 2, prefecture_id: 5 },
     { rice_id: 1, prefecture_id: 15 },
-    { rice_id: 2, prefecture_id: 8 }
+    { rice_id: 2, prefecture_id: 8 },
+    { rice_id: 3, prefecture_id: 8 },
+    { rice_id: 4, prefecture_id: 8 },
+    { rice_id: 4, prefecture_id: 15 }
+
   ]
 )
 
 RiceStatus.create!(
   [
     { rice_id: 1 , hardness: 0, softness: 3, sweetness: 3, freshness:0},
-    { rice_id: 2 , hardness: 0, softness: 1, sweetness: 0, freshness:2}
+    { rice_id: 2 , hardness: 0, softness: 1, sweetness: 0, freshness:2},
+    { rice_id: 3 , hardness: 0, softness: 4, sweetness: 5, freshness:0},
+    { rice_id: 4 , hardness: 1, softness: 0, sweetness: 4, freshness:0},
+    { rice_id: 5 , hardness: 4, softness: 0, sweetness: 0, freshness:5},
+    { rice_id: 6 , hardness: 1, softness: 0, sweetness: 0, freshness:6}
   ]
 )

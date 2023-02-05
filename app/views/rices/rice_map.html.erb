@@ -26,7 +26,18 @@
     </div>
 </div>
 
-<%# ライス一覧のテスト %>
+
+<h1>ライス検索</h1>
+<%= form_with model: @search_rices_form, scope: :q, url: rice_map_path,  method: :get do |f| %>
+  <%= f.label :name, 'お米の品種名' %>
+  <%= f.select :name, Rice.pluck(:name),{include_blank: 'お米の品種名'}%>
+  <%= f.select :rice_prefecture, Prefecture.names.map { |k, v| [ k , v ] },{include_blank: '都道府県'}%>
+  <%= f.select :status_category, @status_category, {include_blank: 'お米の特徴'}%>
+
+  <%= f.submit '検索' %>
+<% end %>
+
+ライス一覧のテスト
 <div class="border-solid border-4 border-light-blue-500 ..." >
   <% @rices.each do |rice| %>
     <%= link_to rice.name, rice_path(rice) %>
@@ -37,14 +48,5 @@
     <br>
   <% end %>
 </div>
-
-<h1>ライス検索</h1>
-<%= search_form_for @q, url: rice_map_path do |f| %>
-  <%= f.label :name_cont, 'お米の品種名' %>
-  <%= f.select :name_cont, Rice.pluck(:name),{include_blank: 'お米の品種名'}%>
-  <%= f.select :prefectures_name_eq, Prefecture.names.map { |k, v| [ k , v ] },{include_blank: '都道府県'}%>
-
-  <%= f.submit '検索' %>
-<% end %>
 
 <%= javascript_pack_tag "rice_map" %>

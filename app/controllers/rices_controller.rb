@@ -1,10 +1,10 @@
 class RicesController < ApplicationController
-  before_action :set_q, only: [:rice_map]
 
   def rice_map
-    @q = Rice.ransack(params[:q])
-    @rices = @q.result(distinct:true).includes(:prefectures).all
-    # byebug
+    @search_rices_form = SearchRicesForm.new(search_params)
+    @rices = @search_rices_form.search
+    @status_category = [['硬めで甘い',1], ['硬めであっさり',2],['柔らかくて甘い',3],['柔らかくてあっさり',4]]
+
   end
 
   def show
@@ -20,16 +20,11 @@ class RicesController < ApplicationController
     end
   end
 
-  def search
-    @results = @q.result
-  end
 
   private
 
-  def set_q
-    @q = Rice.ransack(params[:q])
-    byebug
+  def search_params
+    params[:q]&.permit(:name, :rice_prefecture, :status_category)
   end
-
 
 end
