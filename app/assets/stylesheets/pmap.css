@@ -1,0 +1,106 @@
+/* 図のサイズ */
+.pmap {
+  position: relative;
+  margin: 0px auto;
+  width: 32em;
+  height: 32em;
+  font-size: 1.5vw;
+}
+
+.pmap::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  transform: translateX(-50%) translateY(-50%);
+  width: calc(100% - 4em);
+  height: calc(100% - 4em);
+  background:
+    /* 縦軸と横軸の十時線 */
+    linear-gradient(to right, #3388dd 0%, #3388dd 100%) center / 0.2em calc(100% - 1em) no-repeat,
+    linear-gradient(to bottom, #3388dd 0%, #3388dd 100%) center / calc(100% - 1em) 0.2em no-repeat,
+    /* 上矢印の三角形 */
+    linear-gradient(to bottom right, transparent 50%, #3388dd 50%) top -4px left calc(50% - 0.2em + 1px) / 0.4em 1em no-repeat,
+    linear-gradient(to bottom left, transparent 50%, #3388dd 50%) top -4px left calc(50% + 0.2em - 1px) / 0.4em 1em no-repeat,
+    /* 右矢印の三角形 */
+    linear-gradient(to top left, transparent 50%, #3388dd 50%) top calc(50% + 0.2em - 1px) right -4px / 1em 0.4em no-repeat,
+    linear-gradient(to bottom left, transparent 50%, #3388dd 50%) top calc(50% - 0.2em + 1px) right -4px / 1em 0.4em no-repeat,
+    /* 下矢印の三角形 */
+    linear-gradient(to top right, transparent 50%, #3388dd 50%) bottom -4px left calc(50% - 0.2em + 1px) / 0.4em 1em no-repeat,
+    linear-gradient(to top left, transparent 50%, #3388dd 50%) bottom -4px left calc(50% + 0.2em - 1px) / 0.4em 1em no-repeat,
+    /* 左矢印の三角形 */
+    linear-gradient(to bottom right, transparent 50%, #3388dd 50%) top calc(50% - 0.2em + 1px) left -4px / 1em 0.4em no-repeat,
+    linear-gradient(to top right, transparent 50%, #3388dd 50%) top calc(50% + 0.2em - 1px) left -4px / 1em 0.4em no-repeat,
+    /* 格子状の線 縦、横 */
+    linear-gradient(to right, transparent 99%, #ddd 1%) top left / 10% 10% repeat,
+    linear-gradient(to bottom, transparent 99%, #ddd 1%) top left / 10% 10% repeat;
+  content: "";
+}
+
+/* 縦軸のタイトル */
+.pmap_vaxis_title {
+  display: block;
+  text-align: center;
+}
+
+/* 縦軸の上と下サブタイトル */
+.pmap_vaxis_high,
+.pmap_vaxis_low {
+  position: absolute;
+  left: calc(50% + 1em);
+  white-space: nowrap;
+}
+
+.pmap_vaxis_high {
+  top: 2em;
+}
+
+.pmap_vaxis_low {
+  bottom: 2em;
+}
+
+/* 横軸の左右タイトル */
+.pmap_haxis_title {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+}
+
+.pmap_haxis_high,
+.pmap_haxis_low {
+  position: absolute;
+  top: calc(50% + 1em);
+  white-space: nowrap;
+  writing-mode: initial;
+}
+
+.pmap_haxis_high {
+  right: 2em;
+}
+
+.pmap_haxis_low {
+  left: 2em;
+}
+
+/* 中身のcss */
+.pmap_item>span {
+  display: block;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 0.5em 1em;
+  background-color: #3388dd;
+  ;
+  color: #fff;
+  font-size: 0.75em;
+  white-space: nowrap;
+}
+
+.pmap_item>span:nth-of-type(1) {
+  top: 20%;
+  left: 30%;
+}

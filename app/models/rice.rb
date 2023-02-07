@@ -17,4 +17,21 @@ class Rice < ApplicationRecord
       end
     }
 
+    def status_position
+      top_position = if self.rice_status.softness > 0
+                      50 + (self.rice_status.softness * 10)
+                    elsif self.rice_status.hardness > 0
+                      50 - (self.rice_status.hardness * 10)
+                    end
+
+      side_position =if self.rice_status.freshness > 0
+                      50 + (self.rice_status.freshness * 10)
+                    elsif self.rice_status.sweetness > 0
+                        50 - (self.rice_status.sweetness * 10)
+                    end
+
+      status_position = "top:#{top_position}%;left:#{side_position}%"
+      byebug
+      return status_position
+    end
 end

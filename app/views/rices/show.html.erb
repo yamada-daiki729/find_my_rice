@@ -1,4 +1,5 @@
 <h1 class="text-red-500 text-9xl"> お米の詳細ページだよ</h1>
+<!--
 <%= @rice.name %>
 <%= @rice.characteristic %>
 
@@ -27,4 +28,19 @@
     <% end %>
   <% end %>
   </div>
+</div> -->
+<div class="pmap">
+    <div class="pmap_vaxis">
+        <span class="pmap_vaxis_title">食味</span>
+        <span class="pmap_vaxis_high">甘い</span>
+        <span class="pmap_vaxis_low">あっさり</span>
+    </div>
+    <div class="pmap_haxis">
+        <span class="pmap_haxis_title">食感</span>
+        <span class="pmap_haxis_high">柔らかい</span>
+        <span class="pmap_haxis_low">硬め</span>
+    </div>
+    <div class="pmap_item">
+        <span style=<%= @rice.status_position %>> <%= @rice.name %></span>
+    </div>
 </div>
