@@ -8,6 +8,9 @@ class RicesController < ApplicationController
   end
 
   def show
+    if params[:keyword]
+      @items = RakutenWebService::Ichiba::Item.search(keyword: params[:keyword])
+    end
     @rice = Rice.find(params[:id]) #あとでprivateに出す
   end
 

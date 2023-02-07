@@ -40,7 +40,7 @@
 ライス一覧のテスト
 <div class="border-solid border-4 border-light-blue-500 ..." >
   <% @rices.each do |rice| %>
-    <%= link_to rice.name, rice_path(rice) %>
+    <%= link_to rice.name, rice_path(rice,keyword: rice.name) %>
     <br>
     <% rice.prefectures.each do |prefecture| %>
       <%= prefecture.name %>
