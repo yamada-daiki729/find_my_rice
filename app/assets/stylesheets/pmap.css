@@ -93,10 +93,9 @@
   position: absolute;
   transform: translateX(-50%) translateY(-50%);
   padding: 0.5em 1em;
-  background-color: #3388dd;
-  ;
-  color: #fff;
-  font-size: 0.75em;
+
+  color: rgb(15, 12, 12);
+  font-size: 1.5em;
   white-space: nowrap;
 }
 
