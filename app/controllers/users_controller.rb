@@ -5,6 +5,13 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @user = User.find(current_user.id)
+
+    favorites = RiceFavorite.where(user_id: current_user.id).pluck(:rice_id)
+    @favorite_list = Rice.find(favorites)
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save

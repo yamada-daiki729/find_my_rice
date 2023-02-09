@@ -2,6 +2,10 @@
 <%= @rice.name %>
 <%= @rice.characteristic %>
 
+<%= 'お気に入り:' %>
+<%= render partial: 'favorites/favorite', locals: {rice: @rice} %>
+
+
   <h1>Rakuserach</h1>
 <div class='content'>
   <div id="search-box">

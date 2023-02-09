@@ -2,6 +2,7 @@
 <%= link_to "全国おこめ地図", rice_map_path %>
 <%= link_to "お米総選挙", "#" %>
 <% if logged_in? %>
+  <%= link_to 'マイページ', users_path %>
   <%= link_to "ログアウト", logout_path, method: :delete %>
 <% else %>
   <%= link_to "ログイン", login_path %>
