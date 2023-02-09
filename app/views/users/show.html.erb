@@ -1,0 +1,6 @@
+<h1> ユーザープロフィール欄 </h1>
+
+<p>お気に入りのお米</p>
+<% @favorite_list.each do |rice| %>
+  <%= link_to rice.name, rice_path(rice) %>
+<% end%>

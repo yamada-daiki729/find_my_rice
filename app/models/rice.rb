@@ -1,6 +1,7 @@
 class Rice < ApplicationRecord
   has_many :rice_prefectures
   has_many :prefectures, through: :rice_prefectures
+  has_many :rice_favorites, dependent: :destroy
   has_one :rice_status
 
   scope :search_name, ->(name) { where('rice.name LIKE ?', "%#{name}%") }
@@ -17,7 +18,11 @@ class Rice < ApplicationRecord
       end
     }
 
-    def status_position
+    def favorite_by?(user)
+      rice_favorites.where(user_id: user).exists?
+    end
+
+    def status_position # ライスのステータスポジションのロジック
       side_position = if self.rice_status.softness > 0
                       50 + (self.rice_status.softness * 5)
                     elsif self.rice_status.hardness > 0
