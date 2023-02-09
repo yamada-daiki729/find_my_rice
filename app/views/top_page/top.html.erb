@@ -3,7 +3,7 @@
   <h3 > 色々な特徴のお米を知り、食べてみませんか？</h3>
   <%= current_user.name if logged_in? %>
 
-  <%= link_to "全国のお米を探しに行く", "#" %>
+  <%= link_to "全国のお米を探しに行く", rice_map_path %>
   <br>
   <%= link_to "ユーザー登録", new_users_path %>
 </div>

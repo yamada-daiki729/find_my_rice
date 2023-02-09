@@ -38,6 +38,7 @@ RicePrefecture.create!(
   ]
 )
 
+# スタータスのMAX値は8
 RiceStatus.create!(
   [
     { rice_id: 1 , hardness: 0, softness: 3, sweetness: 3, freshness:0},
@@ -45,6 +46,6 @@ RiceStatus.create!(
     { rice_id: 3 , hardness: 0, softness: 4, sweetness: 5, freshness:0},
     { rice_id: 4 , hardness: 1, softness: 0, sweetness: 4, freshness:0},
     { rice_id: 5 , hardness: 4, softness: 0, sweetness: 0, freshness:5},
-    { rice_id: 6 , hardness: 1, softness: 0, sweetness: 0, freshness:6}
+    { rice_id: 6 , hardness: 1, softness: 0, sweetness: 0, freshness:8}
   ]
 )
