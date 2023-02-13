@@ -30,7 +30,7 @@
 <h1>ライス検索</h1>
 <%= form_with model: @search_rices_form, scope: :q, url: rice_map_path,  method: :get do |f| %>
   <%= f.label :name, 'お米の品種名' %>
-  <%= f.select :name, Rice.pluck(:name),{include_blank: 'お米の品種名'}%>
+  <%= f.select :name, Rice.pluck(:name),{include_blank: 'お米の品種名'}, class: "select select-success w-full max-w-xs" %>
   <%= f.select :rice_prefecture, Prefecture.names.map { |k, v| [ k , v ] },{include_blank: '都道府県'}%>
   <%= f.select :status_category, @status_category, {include_blank: 'お米の特徴'}%>
 
