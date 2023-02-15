@@ -1,8 +1,7 @@
-<div class="border-solid border-4 border-light-blue-500 ...">
-  <h1 > 全国お米地図のページだよ </h1>
+<div class="container w-4/5 border-solid border-4 border-light-blue-500 ...">
   <div id="jmap" >
     <div class="jmap-infobox">
-      <h5 class="h5">世界に一つだけの地図</h5>
+      <h5 class="h5">全国のお米を探してみよう！</h5>
       <p>地図をクリックするとモーダルが表示されます。</p>
     </div>
   </div>
@@ -26,27 +25,39 @@
     </div>
 </div>
 
+<div class="w-4/5 border-solid border-4 border-light-blue-500 m-auto  ..."">
+  <h1>カテゴリー検索</h1>
+  <%= form_with model: @search_rices_form, scope: :q, url: rice_map_path,  method: :get do |f| %>
+    <%= f.label :name, 'お米の品種名' %>
+    <%= f.select :name, Rice.pluck(:name),{include_blank: '選択してください'},
+      class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
 
-<h1>ライス検索</h1>
-<%= form_with model: @search_rices_form, scope: :q, url: rice_map_path,  method: :get do |f| %>
-  <%= f.label :name, 'お米の品種名' %>
-  <%= f.select :name, Rice.pluck(:name),{include_blank: 'お米の品種名'}, class: "select select-success w-full max-w-xs" %>
-  <%= f.select :rice_prefecture, Prefecture.names.map { |k, v| [ k , v ] },{include_blank: '都道府県'}%>
-  <%= f.select :status_category, @status_category, {include_blank: 'お米の特徴'}%>
+    <%= f.label :rice_prefecture, '都道府県' %>
+    <%= f.select :rice_prefecture, Prefecture.names.map { |k, v| [ k , v ] },{include_blank: '選択してください'},
+      class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"%>
 
-  <%= f.submit '検索' %>
-<% end %>
+    <%= f.label :status_category, 'お米の特徴' %>
+    <%= f.select :status_category, @status_category, {include_blank: '選択してください'},
+      class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"%>
 
-ライス一覧のテスト
-<div class="border-solid border-4 border-light-blue-500 ..." >
-  <% @rices.each do |rice| %>
-    <%= link_to rice.name, rice_path(rice,keyword: rice.name) %>
-    <br>
-    <% rice.prefectures.each do |prefecture| %>
-      <%= prefecture.name %>
-    <% end%>
-    <br>
+    <%= f.submit '検索', class:"shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" %>
   <% end %>
+</div>
+<div class="w-4/5 m-auto ">
+  <div class="border-solid border-4 border-light-blue-500  ..." >
+    <% if @rices.present? %>
+      <% @rices.each do |rice| %>
+        <%= link_to rice.name, rice_path(rice,keyword: rice.name) %>
+        <br>
+        <% rice.prefectures.each do |prefecture| %>
+          <%= prefecture.name %>
+        <% end%>
+        <br>
+      <% end %>
+    <% else %>
+      <p>該当するお米がありません</p>
+    <% end %>
+  </div>
 </div>
 
 <%= javascript_pack_tag "rice_map" %>
