@@ -1,49 +1,60 @@
-<h1 class="text-red-500 text-9xl"> お米の詳細ページだよ</h1>
-<%= @rice.name %>
-<%= @rice.characteristic %>
-
-<%= 'お気に入り:' %>
-<%= render partial: 'favorites/favorite', locals: {rice: @rice} %>
-
-
-  <h1>Rakuserach</h1>
-<div class='content'>
-  <div id="search-box">
-    <%= form_tag(rice_path(@rice), method: :get) do %>
-        <%= text_field_tag :good, "",  id: "good_search", name: "keyword", placeholder: "キーワードを打ち込んでください", style: "width: 300px;"%>
-        <button title="検索" type="submit">検索</button>
-    <% end %>
+<div class="container flex ">
+  <div class="container text-center w-3/4 m-auto bg-yellow-100  h-80 border-double border-4 border-gray-500 rounded-lg ">
+    <h3 class="my-4 text-2xl"><%=  "品種名：#{@rice.name}" %> </h3>
+    <div class="flex justify-center text-2xl ">
+      <p>お気に入り:　 </p>
+      <%= render partial: 'favorites/favorite', locals: {rice: @rice} %>
+    </div>
+    <br>
+    <h2 class="text-2xl"> <%= "お米の特徴：#{@rice.characteristic}" %> </h2> <br>
   </div>
-  <h2>検索結果</h2>
-  <div id='good_list'>
-  <%= link_to '楽天で検索', "https://search.rakuten.co.jp/search/mall/#{params[:keyword]}", class: 'text-red-500'  %>
-  <% if @items.present? %>
-    <% @items.first(3).each do |item| %>
-      <div class="list">
-      <% if item.image? %>
-        <%= link_to item.url do %>
-          <%= image_tag item.medium_image_urls[0], style: "width: 100px;height: 100px;display: inline-block;" %>
-        <% end%>
-      <%end%>
-        <br>
-        <%= item.name %>
-      </div>
-    <% end %>
-  <% end %>
+  <div class="ml-32 ">
+    <h1 class="text-center shadow bg-red-500 text-white font-bold py-2 w-60 mx-auto rounded mb-2 "> お米の特徴チャート </h1>
+    <div class="pmap ">
+        <div class="pmap_vaxis">
+            <span class="pmap_vaxis_title">食味</span>
+            <span class="pmap_vaxis_high">甘い</span>
+            <span class="pmap_vaxis_low">あっさり</span>
+        </div>
+        <div class="pmap_haxis">
+            <span class="pmap_haxis_title">食感</span>
+            <span class="pmap_haxis_high">柔らかい</span>
+            <span class="pmap_haxis_low">硬め</span>
+        </div>
+        <div class="pmap_item">
+            <span style=<%= @rice.status_position %>> <i class="fa-solid fa-bowl-food"></i> </span>
+        </div>
+    </div>
   </div>
 </div>
-<div class="pmap">
-    <div class="pmap_vaxis">
-        <span class="pmap_vaxis_title">食味</span>
-        <span class="pmap_vaxis_high">甘い</span>
-        <span class="pmap_vaxis_low">あっさり</span>
+
+<div class="rakuten_search w-1/2 mx-auto">
+    <div class="flex justify-center ">
+      <%= link_to '楽天で探してみる', "https://search.rakuten.co.jp/search/mall/#{params[:keyword]}",
+        class: 'shadow bg-red-500 hover:bg-red-300 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-8 rounded '  %>
     </div>
-    <div class="pmap_haxis">
-        <span class="pmap_haxis_title">食感</span>
-        <span class="pmap_haxis_high">柔らかい</span>
-        <span class="pmap_haxis_low">硬め</span>
+  <div class='content'>
+    <div id='good_list' class="container">
+      <p class="text-center mt-4"><%= "↓#{@rice.name}の楽天検索結果はこちら！ ↓" %> </p>
+      <div class="">
+        <% if @items.present? %>
+          <% @items.first(3).each do |item| %>
+            <div class="list border-double border-4 border-gray-500 my-12 p-2">
+              <% if item.image? %>
+                <%= link_to item.url do %>
+                  <div class="flex justify-center">
+                    <%= image_tag item.medium_image_urls[0], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" %>
+                    <%= image_tag item.medium_image_urls[1], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" %>
+                    <%= image_tag item.medium_image_urls[2], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" %>
+                  </div>
+                  <br>
+                  <%= item.name %>
+                <% end%>
+              <%end%>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-    <div class="pmap_item">
-        <span style=<%= @rice.status_position %>> <i class="fa-solid fa-bowl-food"></i> </span>
-    </div>
+  </div>
 </div>
