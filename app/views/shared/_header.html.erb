@@ -1,11 +1,37 @@
-<%= link_to "Find_My_rice",root_path %>
-<%= link_to "全国おこめ地図", rice_map_path %>
-<%= link_to "お米総選挙", "#" %>
-<% if logged_in? %>
-  <%= link_to 'マイページ', users_path %>
-  <%= link_to "ログアウト", logout_path, method: :delete %>
-<% else %>
-  <%= link_to "ログイン", login_path %>
-<% end %>
+<div class="w-full h-20 bg-green-500 flex justify-between ">
+  <div class="flex items-center mx-12">
+    <%= link_to "Find_My_rice",root_path %>
+  </div>
+  <div class="flex items-center">
+    <div class="flex text-center m-4">
+      <%= link_to rice_map_path do %>
+        <i class="fa-solid fa-map fa-2x"></i>
+        <p>全国お米地図</p>
+      <% end%>
+    </div>
+    <div class="flex text-center m-4">
+      <%= link_to  "#" do  %>
+        <i class="fa-solid fa-ranking-star fa-2x"></i>
+        <p>お米総選挙</p>
+      <% end %>
+    </div>
+    <div class="flex ">
+      <% if logged_in? %>
+        <%= link_to  users_path, class: "text-center m-4" do %>
+          <i class="fa-solid fa-user fa-2x"></i>
+          <p>マイページ</p>
+        <% end %>
+        <%= link_to logout_path, method: :delete, class: "text-center m-4" do %>
+          <i class="fa-solid fa-right-from-bracket fa-2x"></i>
+          <p>ログアウト</p>
+        <% end %>
+      <% else %>
+        <%= link_to login_path, class: "text-center m-4" do %>
+          <i class="fa-solid fa-right-to-bracket fa-2x"></i>
+          <p>ログイン</p>
+        <% end %>
+      <% end %>
+    </div>
+  </div >
 
-<p> ここまでがヘッダー
+</div>

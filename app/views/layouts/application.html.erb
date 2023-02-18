@@ -13,10 +13,16 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= render 'shared/flash_message' %>
-    <%= render 'shared/header' %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
+  <body class="flex flex-col min-h-screen">
+    <header class="sticky top-0 z-50">
+      <%= render 'shared/header' %>
+      <%= render 'shared/flash_message' %>
+    </header>
+    <main class="flex-1 z-0 p-4 ">
+      <%= yield %>
+    </main>
+    <footer>
+      <%= render 'shared/footer' %>
+    </footer>
   </body>
 </html>

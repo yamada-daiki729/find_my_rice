@@ -4,7 +4,6 @@ class RicesController < ApplicationController
     @search_rices_form = SearchRicesForm.new(search_params)
     @rices = @search_rices_form.search
     @status_category = [['硬めで甘い',1], ['硬めであっさり',2],['柔らかくて甘い',3],['柔らかくてあっさり',4]]
-
   end
 
   def show
@@ -22,7 +21,6 @@ class RicesController < ApplicationController
       format.json { render json: @map_serch_rices }
     end
   end
-
 
   private
 

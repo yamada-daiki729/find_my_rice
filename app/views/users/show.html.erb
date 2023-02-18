@@ -1,6 +1,27 @@
-<h1> ユーザープロフィール欄 </h1>
+<div class="container flex flex-col items-center ">
+  <div class="title">
+    <h1 class="text-2xl my-4"> マイページ </h1>
+  </div>
+  <div class="flex flex-col items-center">
+    <h1 class="text-xl my-2"> ニックネーム </h1>
+    <h2> <%= "#{@user.name}"%></h2>
+    <h1 class="text-xl my-2"> メールアドレス</h1>
+    <h2> <%= "#{@user.email}"%></h2>
+  </div>
+  <div class="my_ranking">
+    <h1 class="text-2xl my-4">私の米（まい）ランキング</h1>
+    <ul class="flex flex flex-col items-center">
+      <li> 今後実装予定</li>
+    </ul>
+  </div>
+  <div class="favoritezone flex flex-col items-center">
+    <h1 class="text-2xl my-4">お気に入りのお米一覧</h1>
+    <ul class="flex flex flex-col items-center">
+      <% @favorite_list.each do |rice| %>
+        <li> <%= link_to rice.name, rice_path(rice) %> </li>
+      <% end%>
+    </ul>
+  </div>
 
-<p>お気に入りのお米</p>
-<% @favorite_list.each do |rice| %>
-  <%= link_to rice.name, rice_path(rice) %>
-<% end%>
+  <%= link_to "マイページ編集", "#", class:"my-4 text-xl"%>
+</div>
