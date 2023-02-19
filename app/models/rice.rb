@@ -6,6 +6,7 @@ class Rice < ApplicationRecord
 
   scope :search_name, ->(name) { where('rice.name LIKE ?', "%#{name}%") }
   scope :search_prefecture, ->(prefecture_id) { joins(:prefectures).where(prefectures:{id: prefecture_id})}
+  #カテゴリー検索のステータスカテゴリ別にSQLを分岐しているスコープ
   scope :status_categorise, ->(category_num) {
       if category_num == 1
         joins(:rice_status).where('rice_statuses.hardness > 0 and rice_statuses.sweetness > 0')
@@ -18,7 +19,7 @@ class Rice < ApplicationRecord
       end
     }
 
-    def favorite_by?(user)
+    def favorite_by?(user) #お気に入りされているか確認するメソッド
       rice_favorites.where(user_id: user).exists?
     end
 

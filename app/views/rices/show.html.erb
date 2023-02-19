@@ -43,9 +43,9 @@
               <% if item.image? %>
                 <%= link_to item.url do %>
                   <div class="flex justify-center">
-                    <%= image_tag item.medium_image_urls[0], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" %>
-                    <%= image_tag item.medium_image_urls[1], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" %>
-                    <%= image_tag item.medium_image_urls[2], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" %>
+                    <%= image_tag item.medium_image_urls[0], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" unless item.medium_image_urls[0].nil?  %>
+                    <%= image_tag item.medium_image_urls[1], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" unless item.medium_image_urls[1].nil? %>
+                    <%= image_tag item.medium_image_urls[2], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" unless item.medium_image_urls[2].nil?  %>
                   </div>
                   <br>
                   <%= item.name %>
