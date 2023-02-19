@@ -1,0 +1,27 @@
+<h1 class="text-center text-xl m-4 font-bold"> マイページ編集 </h1>
+
+<div class="w-full max-w-xs mx-auto shadow">
+  <%= form_with model: @user,url: users_path  , local: true, class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
+    <div class="mb-4">
+      <%= f.label :name, class: "block text-gray-700 text-sm font-bold mb-2" %>
+      <%= f.text_field :name, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+    <div class="mb-4">
+      <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %>
+      <%= f.text_field :email, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+    <!--
+    <div class="mb-4">
+      <%= f.fields_for :my_ranking do | mr | %>
+        <%= mr.label :rank, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= mr.text_field :rank, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      <% end%>
+    </div>
+    -->
+    <div class="flex items-center justify-between mx-auto">
+      <%= f.submit "更新", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    </div>
+
+  <% end %>
+</div>
