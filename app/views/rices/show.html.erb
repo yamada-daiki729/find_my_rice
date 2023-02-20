@@ -1,10 +1,12 @@
 <div class="container flex ">
   <div class="container text-center w-3/4 m-auto bg-yellow-100  h-80 border-double border-4 border-gray-500 rounded-lg ">
     <h3 class="my-4 text-2xl"><%=  "品種名：#{@rice.name}" %> </h3>
-    <div class="flex justify-center text-2xl ">
-      <p>お気に入り:　 </p>
-      <%= render partial: 'favorites/favorite', locals: {rice: @rice} %>
-    </div>
+    <% if logged_in? %>
+      <div class="flex justify-center text-2xl ">
+        <p>お気に入り:　 </p>
+        <%= render partial: 'favorites/favorite', locals: {rice: @rice} %>
+      </div>
+    <% end %>
     <br>
     <h2 class="text-2xl"> <%= "お米の特徴：#{@rice.characteristic}" %> </h2> <br>
   </div>
@@ -43,9 +45,9 @@
               <% if item.image? %>
                 <%= link_to item.url do %>
                   <div class="flex justify-center">
-                    <%= image_tag item.medium_image_urls[0], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" unless item.medium_image_urls[0].nil?  %>
+                    <%= image_tag item.medium_image_urls[0], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" unless item.medium_image_urls[0].nil? %>
                     <%= image_tag item.medium_image_urls[1], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" unless item.medium_image_urls[1].nil? %>
-                    <%= image_tag item.medium_image_urls[2], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" unless item.medium_image_urls[2].nil?  %>
+                    <%= image_tag item.medium_image_urls[2], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" unless item.medium_image_urls[2].nil? %>
                   </div>
                   <br>
                   <%= item.name %>
