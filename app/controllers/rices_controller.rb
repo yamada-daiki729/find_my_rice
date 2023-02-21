@@ -2,7 +2,6 @@ class RicesController < ApplicationController
 
   def rice_map
     @search_rices_form = SearchRicesForm.new(search_params)
-    byebug
     @rices = @search_rices_form.search
     @status_category = [['硬めで甘い',1], ['硬めであっさり',2],['柔らかくて甘い',3],['柔らかくてあっさり',4]]
   end
@@ -26,7 +25,6 @@ class RicesController < ApplicationController
   private
 
   def search_params
-    byebug
     params[:q]&.permit(:name, :rice_prefecture, :status_category)
   end
 
