@@ -22,7 +22,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: find_my_rice
   password:
-  host: localhost
+  # host: localhost
 
 development:
   adapter: postgresql
@@ -47,14 +47,20 @@ test:
   database: find_my_rice_test
 
 #
+# production:
+#   adapter: postgresql
+#   encoding: utf8
+#   # For details on connection pooling, see Rails configuration guide
+#   # https://guides.rubyonrails.org/configuring.html#database-pooling
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   username: find_my_rice
+#   password:
+#   host: localhost
+#   password: <%= ENV['FIND_MY_RICE_DATABASE_PASSWORD'] %>
+#   database: find_my_rice_production
+
 production:
-  adapter: postgresql
-  encoding: utf8
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: find_my_rice
-  password:
-  host: localhost
-  password: <%= ENV['FIND_MY_RICE_DATABASE_PASSWORD'] %>
+  <<: *default
   database: find_my_rice_production
+  username: find_my_rice
+  password: <%= ENV["FIND_MY_RICE_DATABASE_PASSWORD"] %>
