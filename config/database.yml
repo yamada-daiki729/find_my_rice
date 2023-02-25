@@ -57,3 +57,4 @@ production:
   password:
   host: localhost
   password: <%= ENV['FIND_MY_RICE_DATABASE_PASSWORD'] %>
+  database: find_my_rice_production
