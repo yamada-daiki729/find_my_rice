@@ -946,7 +946,7 @@ $(document).ready(function () {
         .done(function (prefectureRices) {
           $.each(prefectureRices, function (index, rice) { //モーダルボディーにお米の詳細リンクを記載する
             $('#prefectureModal').find('.modal-body').append(
-              ` <a href="/rices/${rice.id}"> ${rice.name} </a>` + '<br>');
+              ` <a href="/rices/${rice.id}?keyword=${rice.name}"> ${rice.name} </a>` + '<br>');
           });
         })
 
