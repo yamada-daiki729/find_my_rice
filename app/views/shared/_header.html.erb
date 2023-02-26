@@ -28,6 +28,10 @@
           <p>ログアウト</p>
         <% end %>
       <% else %>
+        <%= link_to  new_users_path, class: "text-center m-4" do %>
+          <i class="fa-solid fa-user-plus fa-2x"></i>
+          <p>ユーザー作成</p>
+        <% end %>
         <%= link_to login_path, class: "text-center m-4" do %>
           <i class="fa-solid fa-right-to-bracket fa-2x"></i>
           <p>ログイン</p>
