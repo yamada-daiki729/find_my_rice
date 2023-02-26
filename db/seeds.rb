@@ -93,6 +93,8 @@ RicePrefecture.create!(
     { prefecture_id: 7, rice_id: 17 },
     { prefecture_id: 7, rice_id: 18 },
     { prefecture_id: 7, rice_id: 19 },
+    { prefecture_id: 8, rice_id: 17 },
+    { prefecture_id: 8, rice_id: 7 },
     { prefecture_id: 9, rice_id: 20 },
     { prefecture_id: 9, rice_id: 21 },
     { prefecture_id: 9, rice_id: 22 },
