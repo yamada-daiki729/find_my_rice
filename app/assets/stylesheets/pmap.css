@@ -52,18 +52,18 @@
 }
 
 .pmap_vaxis_high {
-  top: 2em;
+  top: 1em;
 }
 
 .pmap_vaxis_low {
-  bottom: 2em;
+  bottom: 0em;
 }
 
 /* 横軸の左右タイトル */
 .pmap_haxis_title {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: -10px;
+  left: -2px;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -80,11 +80,11 @@
 }
 
 .pmap_haxis_high {
-  right: 2em;
+  right: -3em;
 }
 
 .pmap_haxis_low {
-  left: 2em;
+  left: 1em;
 }
 
 /* 中身のcss */
