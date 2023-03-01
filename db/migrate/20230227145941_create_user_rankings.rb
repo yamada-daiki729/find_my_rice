@@ -7,6 +7,7 @@ class CreateUserRankings < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-    add_index :user_rankings, [:user_id, :rice_id], unique: true
+    add_index :user_rankings, [:rank, :user_id, :rice_id], unique: true
+    add_index :user_rankings, [:rank, :user_id], unique: true
   end
 end

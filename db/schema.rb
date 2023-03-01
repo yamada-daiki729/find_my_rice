@@ -63,8 +63,9 @@ ActiveRecord::Schema.define(version: 2023_02_27_145941) do
     t.bigint "rice_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["rank", "user_id", "rice_id"], name: "index_user_rankings_on_rank_and_user_id_and_rice_id", unique: true
+    t.index ["rank", "user_id"], name: "index_user_rankings_on_rank_and_user_id", unique: true
     t.index ["rice_id"], name: "index_user_rankings_on_rice_id"
-    t.index ["user_id", "rice_id"], name: "index_user_rankings_on_user_id_and_rice_id", unique: true
     t.index ["user_id"], name: "index_user_rankings_on_user_id"
   end
 
