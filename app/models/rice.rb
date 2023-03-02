@@ -2,6 +2,7 @@ class Rice < ApplicationRecord
   has_many :rice_prefectures
   has_many :prefectures, through: :rice_prefectures
   has_many :rice_favorites, dependent: :destroy
+  has_many :user_rankings
   has_one :rice_status
 
   scope :search_name, ->(name) { where('rice.name LIKE ?', "%#{name}%") }

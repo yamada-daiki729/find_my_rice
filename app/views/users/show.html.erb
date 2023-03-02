@@ -11,15 +11,37 @@
   <div class="my_ranking">
     <h1 class="text-2xl my-4 font-bold">私の米（まい）ランキング</h1>
     <ul class="flex flex flex-col items-center">
-      <li> 今後実装予定</li>
+
+    <% if @user.user_rankings.present? %>
+
+      <div class="flex">
+        <p class="mr-4">No1</p>
+        <%= link_to  @user.user_rankings.first.rice.name , rice_path(@user.user_rankings.first.rice) if @user.user_rankings.first %></p>
+      </div>
+      <div class="flex">
+        <p class="mr-4">No2</p>
+        <%= link_to  @user.user_rankings.second.rice.name , rice_path(@user.user_rankings.second.rice) if @user.user_rankings.second %></p>
+      </div>
+      <div class="flex">
+        <p class="mr-4">No3</p>
+        <%= link_to  @user.user_rankings.third.rice.name , rice_path(@user.user_rankings.third.rice) if @user.user_rankings.third %></p>
+      </div>
+    <% else %>
+      <p>まだ私の米（まい）ランキングが登録されていません</p>
+    <% end %>
+
     </ul>
   </div>
   <div class="favoritezone flex flex-col items-center">
     <h1 class="text-2xl my-4 font-bold">お気に入りのお米一覧</h1>
     <ul class="flex flex flex-col items-center">
-      <% @favorite_list.each do |rice| %>
-        <li class="mb-2"> <%= link_to rice.name, rice_path(rice, keyword: rice.name) %> </li>
-      <% end%>
+      <% if @favorite_list.present? %>
+        <% @favorite_list.each do |fav| %>
+          <li class="mb-2"> <%= link_to fav.rice.name, rice_path(fav.rice, keyword: fav.rice.name) %> </li>
+        <% end%>
+      <% else %>
+        <li> まだお米のお気に入り登録をしていません </li>
+      <% end %>
     </ul>
   </div>
 

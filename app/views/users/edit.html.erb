@@ -12,6 +12,21 @@
               <%= f.label :email , class: "inline-block text-gray-800 text-sm sm:text-base mb-2" %>
               <%= f.text_field :email ,class:"w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"  %>
             </div>
+            <div>
+              <%= f.label "私の米(まい)ランキング No1" , class: "inline-block text-gray-800 text-sm sm:text-base mb-2" %>
+              <%= f.select :rank_1, Rice.pluck(:name,:id),{include_blank: '選択してください'},
+                class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+            </div>
+            <div>
+              <%= f.label "私の米(まい)ランキング No2"  , class: "inline-block text-gray-800 text-sm sm:text-base mb-2" %>
+              <%= f.select :rank_2, Rice.pluck(:name,:id),{include_blank: '選択してください'},
+                class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+            </div>
+            <div>
+              <%= f.label "私の米(まい)ランキング No3"  , class: "inline-block text-gray-800 text-sm sm:text-base mb-2" %>
+              <%= f.select :rank_3, Rice.pluck(:name,:id),{include_blank: '選択してください'},
+                class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+            </div>
 
             <%= f.submit "更新", class: "block bg-gray-800 hover:bg-gray-700 active:bg-gray-600 focus-visible:ring ring-gray-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3 w-50 mx-auto my-4" %>
         </div>

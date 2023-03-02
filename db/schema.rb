@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_09_094526) do
+ActiveRecord::Schema.define(version: 2023_02_27_145941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,18 @@ ActiveRecord::Schema.define(version: 2023_02_09_094526) do
     t.index ["rice_id"], name: "index_rice_statuses_on_rice_id"
   end
 
+  create_table "user_rankings", force: :cascade do |t|
+    t.integer "rank", null: false
+    t.bigint "user_id", null: false
+    t.bigint "rice_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["rank", "user_id", "rice_id"], name: "index_user_rankings_on_rank_and_user_id_and_rice_id", unique: true
+    t.index ["rank", "user_id"], name: "index_user_rankings_on_rank_and_user_id", unique: true
+    t.index ["rice_id"], name: "index_user_rankings_on_rice_id"
+    t.index ["user_id"], name: "index_user_rankings_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "crypted_password"
@@ -72,4 +84,6 @@ ActiveRecord::Schema.define(version: 2023_02_09_094526) do
   add_foreign_key "rice_prefectures", "prefectures"
   add_foreign_key "rice_prefectures", "rice"
   add_foreign_key "rice_statuses", "rice"
+  add_foreign_key "user_rankings", "rice"
+  add_foreign_key "user_rankings", "users"
 end
