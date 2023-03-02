@@ -7,9 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(current_user.id)
-
-    favorites = RiceFavorite.where(user_id: current_user.id).pluck(:rice_id)
-    @favorite_list = Rice.find(favorites)
+    @favorite_list = @user.rice_favorites
   end
 
   def edit
