@@ -18,6 +18,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(current_user.id)
+    byebug
+    @user.user_ranking_save(user_ranking_params)
     if @user.update(user_params)
       redirect_back_or_to(users_path, success: 'マイページを更新しました')
     else
@@ -37,6 +39,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def user_ranking_params
+    params.require(:user).permit(:rank_1, :rank_2, :rank_3)
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
