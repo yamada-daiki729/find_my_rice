@@ -148,7 +148,97 @@ RicePrefecture.create!(
     { prefecture_id: 17, rice_id: 39 },
     { prefecture_id: 17, rice_id: 17 },
     { prefecture_id: 18, rice_id: 17 },
-    { prefecture_id: 18, rice_id: 40 }
+    { prefecture_id: 18, rice_id: 40 },
+
+    { prefecture_id: 18, rice_id: 41 },
+
+    { prefecture_id: 25, rice_id: 17 },
+    { prefecture_id: 25, rice_id: 42 },
+
+    { prefecture_id: 24, rice_id: 17 },
+
+    { prefecture_id: 26, rice_id: 17 },
+    { prefecture_id: 26, rice_id: 43 },
+    { prefecture_id: 26, rice_id: 44 },
+
+    { prefecture_id: 18, rice_id: 40 },
+
+    { prefecture_id: 29, rice_id: 44 },
+
+    { prefecture_id: 30, rice_id: 43 },
+    { prefecture_id: 30, rice_id: 45 },
+
+
+    { prefecture_id: 28, rice_id: 17 },
+    { prefecture_id: 28, rice_id: 44 },
+    { prefecture_id: 28, rice_id: 45 },
+
+    { prefecture_id: 31, rice_id: 17 },
+    { prefecture_id: 31, rice_id: 45 },
+    { prefecture_id: 31, rice_id: 46 },
+
+    { prefecture_id: 33, rice_id: 17 },
+    { prefecture_id: 33, rice_id: 45 },
+    { prefecture_id: 33, rice_id: 44 },
+
+    { prefecture_id: 32, rice_id: 17 },
+    { prefecture_id: 32, rice_id: 45 },
+    { prefecture_id: 32, rice_id: 13 },
+
+    { prefecture_id: 34, rice_id: 17 },
+    { prefecture_id: 34, rice_id: 47 },
+    { prefecture_id: 34, rice_id: 48 },
+    { prefecture_id: 34, rice_id: 49 },
+
+    { prefecture_id: 35, rice_id: 17 },
+    { prefecture_id: 35, rice_id: 8 },
+    { prefecture_id: 35, rice_id: 45 },
+
+    { prefecture_id: 37, rice_id: 17 },
+    { prefecture_id: 37, rice_id: 44 },
+    { prefecture_id: 37, rice_id: 50 },
+
+    { prefecture_id: 36, rice_id: 17 },
+    { prefecture_id: 36, rice_id: 46 },
+
+    { prefecture_id: 38, rice_id: 17 },
+    { prefecture_id: 38, rice_id: 44 },
+    { prefecture_id: 38, rice_id: 7 },
+    { prefecture_id: 38, rice_id: 35 },
+
+    { prefecture_id: 39, rice_id: 17 },
+    { prefecture_id: 39, rice_id: 44 },
+    { prefecture_id: 39, rice_id: 35 },
+
+
+    { prefecture_id: 44, rice_id: 44 },
+    { prefecture_id: 44, rice_id: 8 },
+    { prefecture_id: 44, rice_id: 13 },
+
+    { prefecture_id: 40, rice_id: 51 },
+    { prefecture_id: 40, rice_id: 52 },
+
+    { prefecture_id: 45, rice_id: 44 },
+    { prefecture_id: 45, rice_id: 17 },
+    { prefecture_id: 45, rice_id: 53 },
+
+    { prefecture_id: 43, rice_id: 44 },
+    { prefecture_id: 43, rice_id: 54 },
+    { prefecture_id: 43, rice_id: 55 },
+    { prefecture_id: 43, rice_id: 17 },
+
+    { prefecture_id: 46, rice_id: 44 },
+    { prefecture_id: 46, rice_id: 17 },
+    { prefecture_id: 46, rice_id: 56 },
+    { prefecture_id: 46, rice_id: 57 },
+
+    { prefecture_id: 41, rice_id: 58 },
+    { prefecture_id: 41, rice_id: 59 },
+    { prefecture_id: 41, rice_id: 17 },
+
+    { prefecture_id: 42, rice_id: 44 },
+    { prefecture_id: 42, rice_id: 35 },
+    { prefecture_id: 42, rice_id: 60 },
   ]
 )
 
