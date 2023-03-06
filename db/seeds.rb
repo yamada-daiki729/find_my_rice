@@ -279,13 +279,34 @@ RiceStatus.create!(
     { rice_id: 31 , hardness: 0, softness: 4, sweetness: 0, freshness:4},
     { rice_id: 32 , hardness: 2, softness: 0, sweetness: 0, freshness:2},
     { rice_id: 33 , hardness: 1, softness: 0, sweetness: 6, freshness:0},
-    { rice_id: 34 , hardness: 2, softness: 0, sweetness: 0, freshness:3},
+    { rice_id: 34 , hardness: 0, softness: 1, sweetness: 1, freshness:0},
     { rice_id: 35 , hardness: 0, softness: 3, sweetness: 3, freshness:0},
     { rice_id: 36 , hardness: 0, softness: 1, sweetness: 0, freshness:3},
     { rice_id: 37 , hardness: 4, softness: 0, sweetness: 0, freshness:3},
     { rice_id: 38 , hardness: 5, softness: 0, sweetness: 0, freshness:3},
     { rice_id: 39 , hardness: 2, softness: 0, sweetness: 0, freshness:4},
-    { rice_id: 40 , hardness: 2, softness: 0, sweetness: 3, freshness:0}
+    { rice_id: 40 , hardness: 2, softness: 0, sweetness: 3, freshness:0},
+
+    { rice_id: 41 , hardness: 5, softness: 0, sweetness: 6, freshness:0},
+    { rice_id: 42 , hardness: 0, softness: 2, sweetness: 0, freshness:3},
+    { rice_id: 43 , hardness: 0, softness: 2, sweetness: 3, freshness:0},
+    { rice_id: 44 , hardness: 0, softness: 1, sweetness: 0, freshness:1},
+    { rice_id: 45 , hardness: 0, softness: 1, sweetness: 1, freshness:0},
+    { rice_id: 46 , hardness: 4, softness: 0, sweetness: 3, freshness:0},
+    { rice_id: 47 , hardness: 0, softness: 1, sweetness: 0, freshness:4},
+    { rice_id: 48 , hardness: 0, softness: 2, sweetness: 0, freshness:1},
+    { rice_id: 49 , hardness: 4, softness: 0, sweetness: 0, freshness:5},
+    { rice_id: 50 , hardness: 3, softness: 0, sweetness: 2, freshness:0},
+    { rice_id: 51 , hardness: 0, softness: 3, sweetness: 0, freshness:5},
+    { rice_id: 52 , hardness: 0, softness: 4, sweetness: 0, freshness:4},
+    { rice_id: 53 , hardness: 0, softness: 1, sweetness: 0, freshness:2},
+    { rice_id: 54 , hardness: 0, softness: 4, sweetness: 0, freshness:1},
+    { rice_id: 55 , hardness: 0, softness: 5, sweetness: 3, freshness:0},
+    { rice_id: 56 , hardness: 2, softness: 0, sweetness: 3, freshness:0},
+    { rice_id: 57 , hardness: 0, softness: 6, sweetness: 5, freshness:0},
+    { rice_id: 58 , hardness: 0, softness: 4, sweetness: 2, freshness:0},
+    { rice_id: 59 , hardness: 2, softness: 0, sweetness: 2, freshness:0},
+    { rice_id: 60 , hardness: 2, softness: 0, sweetness: 3, freshness:0}
   ]
 )
 
