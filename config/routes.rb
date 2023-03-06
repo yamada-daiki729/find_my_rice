@@ -16,5 +16,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+
+  get 'rice_ranking', to: 'user_rankings#index', as: 'rice_ranking'
   get 'user_ranking/destroy', to: 'user_rankings#destroy'
 end
