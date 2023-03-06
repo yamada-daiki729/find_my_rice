@@ -66,11 +66,27 @@ Rice.create!(
     { name: 'ゆめみずほ', characteristic: '大粒でしっかりとした歯ごたえがあり、さっぱりとした味わい冷めても味が変わらないので、お弁当やおにぎりにぴったり' }, #39
     { name: 'ハナエチゼン', characteristic: 'あっさりさっぱりとしていて、少し硬めのお米なのでお寿司に使われることが多い' }, #40
 
+    { name: 'いちほまれ', characteristic: '柔らかい中にもしっかりとした弾力があり、噛むと優しい甘さが広がる、絹のような白さと艶も特徴。' }, #41
+    { name: 'みずかがみ', characteristic: '炊きたてだけでなく冷めてもふっくらとして、やわらかでやさしい甘みが特徴的なお米' }, #42
+    { name: 'キヌヒカリ', characteristic: 'コシヒカリよりあっさりとした口当たりで、適度な粘りと冷めると甘みが増すというのが特徴' }, #43
+    { name: 'ひのひかり', characteristic: 'コシヒカリに比べて味わいがあっさりしていて味がそれほど濃くないため、どんな料理とも相性が良い品種' }, #44
+    { name: 'きぬむすめ', characteristic: '中粒で白く艶やかな炊き上がり。コシヒカリと比較すると、あっさりとしていて飽きのこない味が特徴的' }, #45
+    { name: '星空舞', characteristic: '炊いたご飯のツヤや光沢が特に優れ、美味しさの指標である「味度値」が非常に高いのが特徴' }, #46
+    { name: 'あきさかり', characteristic: '粒が大きめでもっちりと粘りのある食感に、あっさりとした甘味が特徴' }, #47
+    { name: 'あきろまん', characteristic: 'さっぱりとした口あたりに適度な歯ごたえで、ほどよい粘りがある。冷めても味わいが良く弁当やおにぎりにもよく合うお米。' }, #48
+    { name: '恋の予感', characteristic: 'しっかり噛みしめるほどの硬さと弾力とあっさりした味わい' }, #49
+    { name: 'おいでまい', characteristic: 'あっさりさっぱりとしていて、少し硬めのお米なのでお寿司に使われることが多い' }, #50
 
-
-
-
-
+    { name: '夢つくし', characteristic: 'つややかな光沢ともちもちとした食感が特徴。味はあっさりしている。' }, #51
+    { name: '元気つくし', characteristic: 'ごはん粒がしっかり、ふっくらと炊きあがり、もちもち感があります。' }, #52
+    { name: 'おてんとそだち', characteristic: 'ヒノヒカリの後継種として宮崎県で作られたお米' }, #53
+    { name: '森のくまさん', characteristic: '米粒の見た目がやや細めであるのが特徴。米粒に弾力がしっかりとあり、モチモチの食感。' }, #54
+    { name: 'くまさんの輝き', characteristic: '粒は長円形。炊き上がりにツヤがあり、柔らかめで粘りが強いのが特徴です' }, #55
+    { name: 'あきほなみ', characteristic: '粒が大きくツヤ・甘みがあり冷めても粘り過ぎたりパサついたりしないお米です' }, #56
+    { name: 'イクヒカリ', characteristic: 'コシヒカリに比べてアミロースやタンパク質の含有量が少ない分、よりふっくらとした炊きあがりになり、冷めた時もパサつき感は少なく粘りも強く残る。' }, #57
+    { name: '夢しずく', characteristic: '炊きあがりは柔らかでふっくらとしており、つやと粘り気があるので和食にぴったりのお米' }, #58
+    { name: 'さがびより', characteristic: '粒が大きく、しっかりしている。甘み、香りがよい' }, #59
+    { name: 'なつほのか', characteristic: '粒ぞろいが良く、やさしい甘み、ほのかな甘い香りと程よい粘り' } #60
 
   ]
 )
@@ -132,7 +148,97 @@ RicePrefecture.create!(
     { prefecture_id: 17, rice_id: 39 },
     { prefecture_id: 17, rice_id: 17 },
     { prefecture_id: 18, rice_id: 17 },
-    { prefecture_id: 18, rice_id: 40 }
+    { prefecture_id: 18, rice_id: 40 },
+
+    { prefecture_id: 18, rice_id: 41 },
+
+    { prefecture_id: 25, rice_id: 17 },
+    { prefecture_id: 25, rice_id: 42 },
+
+    { prefecture_id: 24, rice_id: 17 },
+
+    { prefecture_id: 26, rice_id: 17 },
+    { prefecture_id: 26, rice_id: 43 },
+    { prefecture_id: 26, rice_id: 44 },
+
+    { prefecture_id: 18, rice_id: 40 },
+
+    { prefecture_id: 29, rice_id: 44 },
+
+    { prefecture_id: 30, rice_id: 43 },
+    { prefecture_id: 30, rice_id: 45 },
+
+
+    { prefecture_id: 28, rice_id: 17 },
+    { prefecture_id: 28, rice_id: 44 },
+    { prefecture_id: 28, rice_id: 45 },
+
+    { prefecture_id: 31, rice_id: 17 },
+    { prefecture_id: 31, rice_id: 45 },
+    { prefecture_id: 31, rice_id: 46 },
+
+    { prefecture_id: 33, rice_id: 17 },
+    { prefecture_id: 33, rice_id: 45 },
+    { prefecture_id: 33, rice_id: 44 },
+
+    { prefecture_id: 32, rice_id: 17 },
+    { prefecture_id: 32, rice_id: 45 },
+    { prefecture_id: 32, rice_id: 13 },
+
+    { prefecture_id: 34, rice_id: 17 },
+    { prefecture_id: 34, rice_id: 47 },
+    { prefecture_id: 34, rice_id: 48 },
+    { prefecture_id: 34, rice_id: 49 },
+
+    { prefecture_id: 35, rice_id: 17 },
+    { prefecture_id: 35, rice_id: 8 },
+    { prefecture_id: 35, rice_id: 45 },
+
+    { prefecture_id: 37, rice_id: 17 },
+    { prefecture_id: 37, rice_id: 44 },
+    { prefecture_id: 37, rice_id: 50 },
+
+    { prefecture_id: 36, rice_id: 17 },
+    { prefecture_id: 36, rice_id: 46 },
+
+    { prefecture_id: 38, rice_id: 17 },
+    { prefecture_id: 38, rice_id: 44 },
+    { prefecture_id: 38, rice_id: 7 },
+    { prefecture_id: 38, rice_id: 35 },
+
+    { prefecture_id: 39, rice_id: 17 },
+    { prefecture_id: 39, rice_id: 44 },
+    { prefecture_id: 39, rice_id: 35 },
+
+
+    { prefecture_id: 44, rice_id: 44 },
+    { prefecture_id: 44, rice_id: 8 },
+    { prefecture_id: 44, rice_id: 13 },
+
+    { prefecture_id: 40, rice_id: 51 },
+    { prefecture_id: 40, rice_id: 52 },
+
+    { prefecture_id: 45, rice_id: 44 },
+    { prefecture_id: 45, rice_id: 17 },
+    { prefecture_id: 45, rice_id: 53 },
+
+    { prefecture_id: 43, rice_id: 44 },
+    { prefecture_id: 43, rice_id: 54 },
+    { prefecture_id: 43, rice_id: 55 },
+    { prefecture_id: 43, rice_id: 17 },
+
+    { prefecture_id: 46, rice_id: 44 },
+    { prefecture_id: 46, rice_id: 17 },
+    { prefecture_id: 46, rice_id: 56 },
+    { prefecture_id: 46, rice_id: 57 },
+
+    { prefecture_id: 41, rice_id: 58 },
+    { prefecture_id: 41, rice_id: 59 },
+    { prefecture_id: 41, rice_id: 17 },
+
+    { prefecture_id: 42, rice_id: 44 },
+    { prefecture_id: 42, rice_id: 35 },
+    { prefecture_id: 42, rice_id: 60 },
   ]
 )
 
@@ -173,13 +279,34 @@ RiceStatus.create!(
     { rice_id: 31 , hardness: 0, softness: 4, sweetness: 0, freshness:4},
     { rice_id: 32 , hardness: 2, softness: 0, sweetness: 0, freshness:2},
     { rice_id: 33 , hardness: 1, softness: 0, sweetness: 6, freshness:0},
-    { rice_id: 34 , hardness: 2, softness: 0, sweetness: 0, freshness:3},
+    { rice_id: 34 , hardness: 0, softness: 1, sweetness: 1, freshness:0},
     { rice_id: 35 , hardness: 0, softness: 3, sweetness: 3, freshness:0},
     { rice_id: 36 , hardness: 0, softness: 1, sweetness: 0, freshness:3},
     { rice_id: 37 , hardness: 4, softness: 0, sweetness: 0, freshness:3},
     { rice_id: 38 , hardness: 5, softness: 0, sweetness: 0, freshness:3},
     { rice_id: 39 , hardness: 2, softness: 0, sweetness: 0, freshness:4},
-    { rice_id: 40 , hardness: 2, softness: 0, sweetness: 3, freshness:0}
+    { rice_id: 40 , hardness: 2, softness: 0, sweetness: 3, freshness:0},
+
+    { rice_id: 41 , hardness: 5, softness: 0, sweetness: 6, freshness:0},
+    { rice_id: 42 , hardness: 0, softness: 2, sweetness: 0, freshness:3},
+    { rice_id: 43 , hardness: 0, softness: 2, sweetness: 3, freshness:0},
+    { rice_id: 44 , hardness: 0, softness: 1, sweetness: 0, freshness:1},
+    { rice_id: 45 , hardness: 0, softness: 1, sweetness: 1, freshness:0},
+    { rice_id: 46 , hardness: 4, softness: 0, sweetness: 3, freshness:0},
+    { rice_id: 47 , hardness: 0, softness: 1, sweetness: 0, freshness:4},
+    { rice_id: 48 , hardness: 0, softness: 2, sweetness: 0, freshness:1},
+    { rice_id: 49 , hardness: 4, softness: 0, sweetness: 0, freshness:5},
+    { rice_id: 50 , hardness: 3, softness: 0, sweetness: 2, freshness:0},
+    { rice_id: 51 , hardness: 0, softness: 3, sweetness: 0, freshness:5},
+    { rice_id: 52 , hardness: 0, softness: 4, sweetness: 0, freshness:4},
+    { rice_id: 53 , hardness: 0, softness: 1, sweetness: 0, freshness:2},
+    { rice_id: 54 , hardness: 0, softness: 4, sweetness: 0, freshness:1},
+    { rice_id: 55 , hardness: 0, softness: 5, sweetness: 3, freshness:0},
+    { rice_id: 56 , hardness: 2, softness: 0, sweetness: 3, freshness:0},
+    { rice_id: 57 , hardness: 0, softness: 6, sweetness: 5, freshness:0},
+    { rice_id: 58 , hardness: 0, softness: 4, sweetness: 2, freshness:0},
+    { rice_id: 59 , hardness: 2, softness: 0, sweetness: 2, freshness:0},
+    { rice_id: 60 , hardness: 2, softness: 0, sweetness: 3, freshness:0}
   ]
 )
 
