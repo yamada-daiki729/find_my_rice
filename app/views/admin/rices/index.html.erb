@@ -1,0 +1,21 @@
+<div class="">
+  <h1 class="text-red-500"> ライス一覧ページ</h1>
+
+  <div class="flex">
+    <th scope="col"><%= "ID" %></th>
+    <th scope="col"><%= "品種名" %></th>
+    <th scope="col"><%= "お米の特徴" %></th>
+  </div>
+
+  <% @rices.each do |rice|%>
+    <div class="flex">
+      <p><%= rice.id %></p>
+      <p><%= rice.name %></p>
+      <p><%= rice.characteristic %></p>
+      <p><%= rice.rice_status.hardness %></p>
+      <p><%= rice.rice_status.softness %></p>
+      <p><%= rice.rice_status.sweetness %></p>
+      <p><%= rice.rice_status.freshness %></p>
+    </div>
+  <% end%>
+</div>
