@@ -19,4 +19,11 @@ Rails.application.routes.draw do
 
   get 'rice_ranking', to: 'user_rankings#index', as: 'rice_ranking'
   get 'user_ranking/destroy', to: 'user_rankings#destroy'
+
+  namespace :admin do
+    get 'login', to: 'user_sessions#new'
+    post 'login', to: 'user_sessions#create'
+    delete 'logout', to: 'user_sessions#destroy'
+    root 'dashboards#index'
+  end
 end
