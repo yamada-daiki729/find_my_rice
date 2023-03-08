@@ -16,6 +16,9 @@
       <p><%= rice.rice_status.softness %></p>
       <p><%= rice.rice_status.sweetness %></p>
       <p><%= rice.rice_status.freshness %></p>
+      <%= link_to "詳細", admin_rice_path(rice) %>
+      <%= link_to "編集", edit_admin_rice_path(rice) %>
+
     </div>
   <% end%>
 </div>
