@@ -1,7 +1,5 @@
 class Admin::RicesController < Admin::BaseController
 
-
-
   def index
     @rices = Rice.includes(:prefectures, :rice_status).order("id")
   end
@@ -36,7 +34,5 @@ class Admin::RicesController < Admin::BaseController
   def rice_params
     params.require(:rice).permit(:name, :characteristic)
   end
-
-
 
 end

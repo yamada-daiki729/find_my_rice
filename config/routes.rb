@@ -27,5 +27,6 @@ Rails.application.routes.draw do
     root 'dashboards#index'
     resources :rices, only: %i[index edit update show destroy]
     resources :rice_status, only: %i[ update destroy]
+    resources :rice_prefectures, only: %i[destroy]
   end
 end

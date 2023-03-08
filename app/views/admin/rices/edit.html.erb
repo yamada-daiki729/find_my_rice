@@ -12,7 +12,6 @@
               <%= f.label '特徴' , class: "inline-block text-gray-800 text-sm sm:text-base mb-2" %>
               <%= f.text_area :characteristic, rows: 5, class:"w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"  %>
             </div>
-
             <%= f.submit "更新", class: "block bg-gray-800 hover:bg-gray-700 active:bg-gray-600 focus-visible:ring ring-gray-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3 w-50 mx-auto my-4" %>
         </div>
       </div>
@@ -45,6 +44,15 @@
         </div>
       </div>
     <% end %>
-
+    <div class="max-w-lg border rounded-lg mx-auto">
+      <h1 class="mb-2">登録都道府県一覧</h1>
+        <% @rice.rice_prefectures.each do |p| %>
+          <div class="flex">
+            <p class="text-base mb-2"><%= p.prefecture.name %></p>
+            <%= link_to '削除',admin_rice_prefecture_path(p),method: :delete, data: {confirm: "#{p.prefecture.name}を削除しますか？"}, class:"ml-6"  %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
