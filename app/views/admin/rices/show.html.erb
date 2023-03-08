@@ -1,0 +1,17 @@
+<h1>アドミンお米詳細ページ</h1>
+<%= @rice.name %>
+<br>
+<%= @rice.characteristic %>
+<br>
+<%= "硬さ#{@rice.rice_status.hardness}" %>
+<br>
+<%= "柔らかさ#{@rice.rice_status.softness}" %>
+<br>
+<%= "甘さ#{@rice.rice_status.sweetness}" %>
+<br>
+<%= "あっさりさ#{@rice.rice_status.freshness}" %>
+<br>
+<% @rice.prefectures.each do |p| %>
+  <%= p.name %>
+  <br>
+<% end %>

@@ -4,7 +4,6 @@ class Admin::RicesController < Admin::BaseController
 
   def index
     @rices = Rice.includes(:prefectures, :rice_status).order("id")
-    byebug
   end
 
   def show
