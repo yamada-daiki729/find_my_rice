@@ -18,7 +18,7 @@
               <td><%= user.id %></td>
               <td><%= user.name %></td>
               <td><%= user.email %></td>
-              <td><%= "ロール" %></td>
+              <td><%= user.role %></td>
               <td>
                 <%= link_to "削除", admin_user_path(user), method: :delete, data: {confirm: "#{user.name}を削除しますか？"} %>
               </td>
