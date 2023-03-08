@@ -1,17 +1,41 @@
-<h1>アドミンお米詳細ページ</h1>
-<%= @rice.name %>
-<br>
-<%= @rice.characteristic %>
-<br>
-<%= "硬さ#{@rice.rice_status.hardness}" %>
-<br>
-<%= "柔らかさ#{@rice.rice_status.softness}" %>
-<br>
-<%= "甘さ#{@rice.rice_status.sweetness}" %>
-<br>
-<%= "あっさりさ#{@rice.rice_status.freshness}" %>
-<br>
-<% @rice.prefectures.each do |p| %>
-  <%= p.name %>
-  <br>
-<% end %>
+<div class="">
+  <h1 class="text-xl py-2 text-center"><%= "#{@rice.name}の詳細情報" %></h1>
+  <div class="text-right mr-8">
+    <%= link_to "編集する",edit_admin_rice_path ,class:"bg-blue-300 p-2 rounded-lg"%>
+  </div>
+  <div class="flex text-lg my-2">
+    <h1>品種名:</h1>
+    <h1 class="ml-4"><%= @rice.name %></h1>
+  </div>
+  <div class="flex text-lg my-2">
+    <h1>お米の特徴:</h1>
+    <h1 class="ml-4"><%= @rice.characteristic %></h1>
+  </div>
+  <div class="flex text-lg my-2">
+    <h1>お米の硬さ:</h1>
+    <h1 class="ml-4"><%= @rice.rice_status.hardness %></h1>
+  </div>
+
+  <div class="flex text-lg my-2">
+    <h1>お米の柔らかさ:</h1>
+    <h1 class="ml-4"><%= @rice.rice_status.softness %></h1>
+  </div>
+
+  <div class="flex text-lg my-2">
+    <h1>お米の甘さ:</h1>
+    <h1 class="ml-4"><%= @rice.rice_status.sweetness %></h1>
+  </div>
+
+  <div class="flex text-lg my-2">
+    <h1>お米のあっさりさ:</h1>
+    <h1 class="ml-4"><%= @rice.rice_status.freshness %></h1>
+  </div>
+  <div class="text-lg my-2">
+    <h1 class="mb-2">登録都道府県一覧</h1>
+    <ul class="">
+      <% @rice.prefectures.each do |p| %>
+        <li class="text-base mb-2"><%= p.name %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
