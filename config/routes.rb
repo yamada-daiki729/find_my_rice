@@ -28,5 +28,6 @@ Rails.application.routes.draw do
     resources :rices, only: %i[index edit update show destroy]
     resources :rice_status, only: %i[ update destroy]
     resources :rice_prefectures, only: %i[destroy]
+    resources :users, only: %i[index destroy]
   end
 end
