@@ -18,6 +18,7 @@
       <p><%= rice.rice_status.freshness %></p>
       <%= link_to "詳細", admin_rice_path(rice) %>
       <%= link_to "編集", edit_admin_rice_path(rice) %>
+      <%= link_to "削除", admin_rice_path(rice), method: :delete %>
 
     </div>
   <% end%>

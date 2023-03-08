@@ -25,6 +25,12 @@ class Admin::RicesController < Admin::BaseController
     end
   end
 
+  def destroy
+    rice = Rice.find(params[:id])
+    rice.destroy!
+    redirect_back_or_to(admin_rices_path, success: "#{rice.name}を削除しました")
+  end
+
   private
 
   def rice_params
