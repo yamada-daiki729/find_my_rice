@@ -28,10 +28,6 @@ class Admin::RicesController < Admin::BaseController
 
   private
 
-  def rice_status_params
-    params.require(:rice_status).permit(:hardness, :softness, :sweetness, :freshness)
-  end
-
   def rice_params
     params.require(:rice).permit(:name, :characteristic)
   end
