@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
+  enum role: { general: 0, admin: 1 }
+
   has_many :rice_favorites, dependent: :destroy
   has_many :user_rankings, dependent: :destroy
 
