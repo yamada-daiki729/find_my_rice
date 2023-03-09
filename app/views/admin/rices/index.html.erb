@@ -1,0 +1,43 @@
+<div class="">
+  <h1 class="text-xl text-center pt-4"> ライス一覧ページ</h1>
+  <div class="text-right mr-8 mb-4">
+    <%= link_to "お米新規作成",new_admin_rice_path ,class:"bg-blue-300 p-2 rounded-lg"%>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col"><%= "ID" %></th>
+          <th scope="col"><%= "品種名" %></th>
+          <th scope="col"><%= "お米の特徴" %></th>
+          <th scope="col"><%= "硬さ" %></th>
+          <th scope="col"><%= "柔らかさ" %></th>
+          <th scope="col"><%= "甘さ" %></th>
+          <th scope="col"><%= "あっさりさ" %></th>
+          <th scope="col">管理項目</th>
+        </tr>
+        </thead>
+        <tbody>
+          <% @rices.each do |rice|%>
+            <tr>
+              <td><%= rice.id %></td>
+              <td><%= rice.name %></td>
+              <td><%= rice.characteristic %></td>
+              <td><%= rice.rice_status.hardness %></td>
+              <td><%= rice.rice_status.softness %></td>
+              <td><%= rice.rice_status.sweetness %></td>
+              <td><%= rice.rice_status.freshness %></td>
+              <td>
+                <%= link_to "詳細", admin_rice_path(rice) %><br>
+                <%= link_to "編集", edit_admin_rice_path(rice) %><br>
+                <%= link_to "削除", admin_rice_path(rice), method: :delete, data: {confirm: "#{rice.name}を削除しますか？"} %>
+              </td>
+            </tr>
+          <% end%>
+        </tbody>
+      </div>
+    </div>
+  </div>
+</div>

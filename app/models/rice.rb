@@ -1,9 +1,9 @@
 class Rice < ApplicationRecord
-  has_many :rice_prefectures
+  has_many :rice_prefectures, dependent: :destroy
   has_many :prefectures, through: :rice_prefectures
   has_many :rice_favorites, dependent: :destroy
-  has_many :user_rankings
-  has_one :rice_status
+  has_many :user_rankings, dependent: :destroy
+  has_one :rice_status, dependent: :destroy
 
   scope :search_name, ->(name) { where('rice.name LIKE ?', "%#{name}%") }
   scope :search_prefecture, ->(prefecture_id) { joins(:prefectures).where(prefectures:{id: prefecture_id})}

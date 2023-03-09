@@ -1,4 +1,5 @@
 class RicesController < ApplicationController
+  skip_before_action :require_login, only: %i[rice_map show rice_map_serch search_params]
 
   def rice_map
     @search_rices_form = SearchRicesForm.new(search_params)
