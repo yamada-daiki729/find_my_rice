@@ -1,5 +1,19 @@
 class Admin::RicesController < Admin::BaseController
 
+  def new
+    @rice = Rice.new
+  end
+
+  def create
+    @rice = Rice.new(rice_params)
+    if @rice.save
+      @rice.create_rice_status!(rice_status_params)
+      redirect_to admin_rices_path, success: 'お米を作成しました'
+    else
+      flash.now[:danger] = 'お米作成に失敗しました'
+    end
+  end
+
   def index
     @rices = Rice.includes(:prefectures, :rice_status).order("id")
   end
@@ -30,6 +44,10 @@ class Admin::RicesController < Admin::BaseController
   end
 
   private
+
+  def rice_status_params
+    params.require(:rice).permit(:hardness, :softness, :sweetness, :freshness)
+  end
 
   def rice_params
     params.require(:rice).permit(:name, :characteristic)

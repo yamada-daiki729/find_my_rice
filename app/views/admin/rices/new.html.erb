@@ -1,0 +1,44 @@
+<div class="bg-white py-6 sm:py-8 lg:py-12">
+  <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+    <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8">ライス作成ページ</h2>
+      <%= form_with model: @rice ,url: admin_rices_path, local: true, class: "max-w-lg border rounded-lg mx-auto" do |f| %>
+        <div class="flex flex-col gap-4 p-4 md:p-8">
+          <%= render 'layouts/error_messages', model: f.object %>
+            <div>
+              <%= f.label '品種名' , class: "inline-block text-gray-800 text-sm sm:text-base mb-2" %>
+              <%= f.text_field :name ,class:"w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"  %>
+            </div>
+
+            <div>
+              <%= f.label 'お米の特徴' , class: "inline-block text-gray-800 text-sm sm:text-base mb-2" %>
+              <%= f.text_area :characteristic ,class:"w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"  %>
+            </div>
+
+            <div>
+              <%= f.label "硬さ" , class: "inline-block text-gray-800 text-sm sm:text-base mb-2" %>
+              <%= f.select :hardness, (0..8).to_a,{include_blank: '選択してください'},
+                class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+            </div>
+            <div>
+              <%= f.label "柔らかさ"  , class: "inline-block text-gray-800 text-sm sm:text-base mb-2" %>
+              <%= f.select :softness, (0..8).to_a,{include_blank: '選択してください'},
+                class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+            </div>
+            <div>
+              <%= f.label "甘さ"  , class: "inline-block text-gray-800 text-sm sm:text-base mb-2" %>
+              <%= f.select :sweetness, (0..8).to_a,{include_blank: '選択してください'},
+                class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+            </div>
+            <div>
+              <%= f.label "あっさりさ"  , class: "inline-block text-gray-800 text-sm sm:text-base mb-2" %>
+              <%= f.select :freshness, (0..8).to_a,{include_blank: '選択してください'},
+                class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+            </div>
+
+
+            <%= f.submit "登録", class: "block bg-gray-800 hover:bg-gray-700 active:bg-gray-600 focus-visible:ring ring-gray-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3 w-50 mx-auto my-4" %>
+
+        </div>
+      <% end %>
+  </div>
+</div>

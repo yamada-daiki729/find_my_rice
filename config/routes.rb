@@ -25,9 +25,9 @@ Rails.application.routes.draw do
     post 'login', to: 'user_sessions#create'
     delete 'logout', to: 'user_sessions#destroy'
     root 'dashboards#index'
-    resources :rices, only: %i[index edit update show destroy]
+    resources :rices
     resources :rice_status, only: %i[ update destroy]
-    resources :rice_prefectures, only: %i[destroy]
+    resources :rice_prefectures, only: %i[create destroy]
     resources :users, only: %i[new create index edit update destroy]
   end
 end
