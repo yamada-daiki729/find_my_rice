@@ -6,6 +6,6 @@ class Admin::UsersController < Admin::BaseController
   def destroy
     @user= User.find(params[:id])
     @user.destroy!
-    redirect_to admin_users_path
+    redirect_back_or_to(admin_users_path, danger: 'ログアウトしました')
   end
 end
