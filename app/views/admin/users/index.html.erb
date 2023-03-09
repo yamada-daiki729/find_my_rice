@@ -1,5 +1,9 @@
 <div class="">
-  <h1 class="">ユーザー管理ページ</h1>
+  <h1 class="text-center text-xl pt-4">ユーザー管理ページ</h1>
+  <div class="text-right mr-8 mb-4">
+    <%= link_to "ユーザー新規作成",new_admin_user_path ,class:"bg-blue-300 p-2 rounded-lg"%>
+  </div>
+
   <div class="row">
     <div class="col-sm-12">
       <table class="table table-striped">
@@ -20,7 +24,9 @@
               <td><%= user.email %></td>
               <td><%= user.role %></td>
               <td>
-                <%= link_to "削除", admin_user_path(user), method: :delete, data: {confirm: "#{user.name}を削除しますか？"} %>
+                <%= link_to "編集", edit_admin_user_path(user) %><br>
+                <%= link_to "削除", admin_user_path(user), method: :delete, data: {confirm: "#{user.name}を削除しますか？"} %><br>
+
               </td>
             </tr>
           <% end%>
