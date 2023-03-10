@@ -22,9 +22,6 @@
     "webpack-dev-server": "^3"
   },
   "engines": {
-    "node": "18.x"
-  },
-  "scripts": {
-    "develop": "NODE_OPTIONS='--openssl-legacy-provider' gatsby develop"
+    "node": "16.x"
   }
 }
