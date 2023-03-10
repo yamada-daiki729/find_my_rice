@@ -25,6 +25,6 @@
     "node": "18.x"
   },
   "scripts": {
-    "develop": "NODE_OPTIONS='--openssl-legacy-provider' gatsby develop",
+    "develop": "NODE_OPTIONS='--openssl-legacy-provider' gatsby develop"
   }
 }
