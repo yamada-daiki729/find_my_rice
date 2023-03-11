@@ -18,7 +18,7 @@
         <div class="flex">
           <p class="mr-4">No1</p>
           <%= link_to  @user.user_rankings.find_by(rank:1).rice.name , rice_path(@user.user_rankings.find_by(rank:1).rice) if @user.user_rankings.find_by(rank:1) %></p>
-          <%= link_to user_ranking_destroy_path(rank: 1) do %>
+          <%= link_to user_ranking_path(@user,rank: 1), method: :delete, data: { confirm: "私の米（まい）ランキングNo1を削除しますか？" }  do %>
             <i class="fa-solid fa-delete-left ml-4"></i>
           <% end%>
         </div>
@@ -27,7 +27,7 @@
         <div class="flex">
           <p class="mr-4">No2</p>
           <%= link_to  @user.user_rankings.find_by(rank:2).rice.name , rice_path(@user.user_rankings.find_by(rank:2).rice) if @user.user_rankings.find_by(rank:2)%></p>
-          <%= link_to user_ranking_destroy_path(rank: 2) do %>
+          <%= link_to user_ranking_path(@user,rank: 2), method: :delete, data: { confirm: "私の米（まい）ランキングNo2を削除しますか？" }  do %>
             <i class="fa-solid fa-delete-left ml-4"></i>
           <% end%>
         </div>
@@ -36,7 +36,7 @@
         <div class="flex">
           <p class="mr-4">No3</p>
           <%= link_to  @user.user_rankings.find_by(rank:3).rice.name , rice_path(@user.user_rankings.find_by(rank:3).rice)  %></p>
-          <%= link_to user_ranking_destroy_path(rank: 3) do %>
+          <%= link_to user_ranking_path(@user,rank: 3), method: :delete, data: { confirm: "私の米（まい）ランキングNo3を削除しますか？" }  do %>
             <i class="fa-solid fa-delete-left ml-4"></i>
           <% end%>
         </div>

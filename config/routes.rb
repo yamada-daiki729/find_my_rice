@@ -17,8 +17,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :user_rankings, only: %i[ create destroy]
   get 'rice_ranking', to: 'user_rankings#index', as: 'rice_ranking'
-  get 'user_ranking/destroy', to: 'user_rankings#destroy'
 
   namespace :admin do
     get 'login', to: 'user_sessions#new'

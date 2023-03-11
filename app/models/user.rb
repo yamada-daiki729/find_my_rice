@@ -46,4 +46,12 @@ class User < ApplicationRecord
     end
   end
 
+  def registered_myranking?(rice)
+    if self.user_rankings.find_by(rice_id:rice.id)
+      return true
+    else
+      return false
+    end
+  end
+
 end
