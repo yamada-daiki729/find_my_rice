@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(current_user.id)
-    @user.user_ranking_save(user_ranking_params)
+    @user.user_ranking_change(user_ranking_params)
     if @user.update(user_params)
       redirect_back_or_to(users_path, success: 'マイページを更新しました')
     else
