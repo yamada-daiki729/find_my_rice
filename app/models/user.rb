@@ -30,7 +30,14 @@ class User < ApplicationRecord
     else
       self.user_rankings.create(rank: 3, rice_id: user_ranking[:rank_3].to_i )
     end
+  end
 
+  def myranking_rice_rank(rank)#userのお米マイランキングのランクごとに情報を取ってくるメソッド
+    if self.user_rankings.find_by(rank:rank)
+      return self.user_rankings.find_by(rank:rank).rice_id
+    else
+      return 0
+    end
   end
 
 end
