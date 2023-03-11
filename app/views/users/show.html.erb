@@ -44,9 +44,12 @@
     <% else %>
       <p>まだ私の米（まい）ランキングが登録されていません</p>
     <% end %>
-
     </ul>
   </div>
+  <%= link_to "https://twitter.com/share?url=https://www.find-my-rice.com&text=【私の米（まい）ランキングはこれです!】%0a%0a  No1. #{ @user.user_rankings.find_by(rank:1).rice.name }%0a%0a  No2. #{ @user.user_rankings.find_by(rank:2).rice.name }%0a%0a  No3. #{ @user.user_rankings.find_by(rank:3).rice.name }%0a%0a", target: '_blank' do %>
+    <span>私の米（まい）ランキングをtwitterシェアしよう！</span>
+    <i class="fab fa-twitter" style='color: #3399FF;'></i>
+  <% end %>
   <div class="favoritezone flex flex-col items-center">
     <h1 class="text-2xl my-4 font-bold">お気に入りのお米一覧</h1>
     <ul class="flex flex flex-col items-center">
