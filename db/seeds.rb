@@ -14,14 +14,6 @@
   )
 end
 
-User.create!(
-  [
-    {email: "a@a", name:"aaa", password: "aaa", password_confirmation: "aaa", role: 1 },
-    {email: "b@b", name:"bbb", password: "bbb", password_confirmation: "bbb" },
-    {email: "c@c", name:"ccc", password: "ccc", password_confirmation: "ccc" }
-  ]
-)
-
 #お米データ
 Rice.create!(
   [
