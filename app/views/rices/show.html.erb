@@ -1,11 +1,23 @@
 <div class="container flex ">
-  <div class="container text-center w-3/4 m-auto bg-yellow-100  h-80 border-double border-4 border-gray-500 rounded-lg ">
+  <div class="container text-center w-3/4 m-auto bg-yellow-100  h-auto border-double border-4 border-gray-500 rounded-lg ">
     <h3 class="my-4 text-2xl"><%=  "品種名：#{@rice.name}" %> </h3>
     <% if logged_in? %>
       <div class="flex justify-center text-2xl ">
         <p>お気に入り:　 </p>
         <%= render partial: 'favorites/favorite', locals: {rice: @rice} %>
       </div>
+      <div class=" justify-center text-2xl ">
+        <% if current_user.registered_myranking?(@rice)%>
+          <p>私の米（まい）ランキングに登録しています</p>
+        <% else %>
+          <p>私の米（まい）ランキングに登録する: </p>
+          <br>
+          <%= link_to "No.1に登録" ,user_rankings_path(current_user,rank: 1, rice: @rice),method: :post %>
+          <%= link_to "No.2に登録" ,user_rankings_path(current_user,rank: 2, rice: @rice),method: :post %>
+          <%= link_to "No.3に登録" ,user_rankings_path(current_user,rank: 3, rice: @rice),method: :post %>
+        <% end%>
+      </div>
+
     <% end %>
     <br>
     <h2 class="text-2xl"> <%= "お米の特徴：#{@rice.characteristic}" %> </h2> <br>

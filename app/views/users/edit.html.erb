@@ -14,17 +14,17 @@
             </div>
             <div>
               <%= f.label "私の米(まい)ランキング No1" , class: "inline-block text-gray-800 text-sm sm:text-base mb-2" %>
-              <%= f.select :rank_1, Rice.pluck(:name,:id),{include_blank: '選択してください'},
+              <%= f.select :rank_1, Rice.pluck(:name,:id),{include_blank: '選択してください',selected: @user.myranking_rice_rank(1)},
                 class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
             </div>
             <div>
               <%= f.label "私の米(まい)ランキング No2"  , class: "inline-block text-gray-800 text-sm sm:text-base mb-2" %>
-              <%= f.select :rank_2, Rice.pluck(:name,:id),{include_blank: '選択してください'},
+              <%= f.select :rank_2, Rice.pluck(:name,:id),{include_blank: '選択してください',selected: @user.myranking_rice_rank(2)},
                 class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
             </div>
             <div>
               <%= f.label "私の米(まい)ランキング No3"  , class: "inline-block text-gray-800 text-sm sm:text-base mb-2" %>
-              <%= f.select :rank_3, Rice.pluck(:name,:id),{include_blank: '選択してください'},
+              <%= f.select :rank_3, Rice.pluck(:name,:id),{include_blank: '選択してください',selected: @user.myranking_rice_rank(3)},
                 class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
             </div>
 
