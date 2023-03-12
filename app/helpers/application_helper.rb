@@ -29,4 +29,14 @@ module ApplicationHelper
     }
   end
 
+  def page_title(page_title = '')
+    byebug
+    base_title = 'Find_my_rice'
+
+    if page_title.empty?
+      base_title
+    else
+      page_title + " | " + base_title
+    end
+  end
 end
