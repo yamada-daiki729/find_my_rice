@@ -38,4 +38,9 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def twitter_share_message(user)
+    message = "&text=【私の米（まい）ランキングはこれです!】%0a%0a  No1. #{ user.user_rankings.find_by(rank:1).rice.name }%0a%0a  No2. #{ user.user_rankings.find_by(rank:2).rice.name }%0a%0a  No3. #{ user.user_rankings.find_by(rank:3).rice.name }%0a%0a"
+    return message
+  end
 end
