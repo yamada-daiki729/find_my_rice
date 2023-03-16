@@ -1,12 +1,68 @@
 <% content_for(:title, "top") %>
 <div class=" container border-solid border-4 border-light-blue-500 ..." >
-  <h3 class="text-center text-2xl my-2" > 色々なお米の特徴を知り、食べてみませんか？</h3>
+  <h3 class="text-center text-2xl my-2" > 色々なお米を知って、お気に入りのお米を見つけよう！</h3>
 
-  <div class="border flex flex-col">
-    <%= link_to "全国のお米を探しに行く", rice_map_path,
-      class: 'shadow w-1/4 text-center mx-auto my-20 bg-yellow-500 hover:bg-yellow-300 focus:shadow-outline focus:outline-none text-white font-bold py-4 px-8 rounded-full ' %>
-    <br>
-    <%= link_to "ユーザー登録", new_users_path,
-      class: 'shadow w-1/4 text-center mx-auto my-20 bg-yellow-500 hover:bg-yellow-300 focus:shadow-outline focus:outline-none text-white font-bold py-4 px-8 rounded-full' unless current_user %>
+  <div class="border ">
+
+    <div class="ml-4 my-32 flex">
+      <div class="my-auto w-1/2 mx-auto">
+        <div class="flex justify-center items-center mb-4 ">
+          <h1 class="text-xl">1.</h1>
+          <p class="text-lg ml-4">全国お米地図を見て色々な品種を見てみよう!</p>
+        </div>
+        <div class="text-center mt-16">
+          <%= link_to "全国のお米を探しに行く", rice_map_path,
+            class: 'shadow w-1/4 my-8 bg-yellow-500 hover:bg-yellow-300 focus:shadow-outline focus:outline-none text-white font-bold py-4 px-8 rounded-full' %>
+        </div>
+      </div>
+      <div class="w-1/2">
+        <%= image_tag 'image1.jpg', size: '300x500', class: 'h-auto max-w-lg rounded-xl mx-auto' %>
+      </div>
+    </div>
+
+    <div class="ml-4 my-32 flex">
+      <div class="w-1/2">
+        <%= image_tag 'image2.jpg', size: '300x500', class: 'h-auto max-w-lg rounded-xl mx-auto' %>
+      </div>
+      <div class="my-auto w-1/2">
+        <div class="flex justify-center items-center mb-4 ">
+          <h1 class="text-xl">2.</h1>
+          <p class="text-lg ml-4">気になるお米をクリックして<br>お米の特徴を知ろう！</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ml-4 my-32 flex">
+      <div class="my-auto w-1/2">
+        <div class="flex justify-center items-center mb-4">
+          <h1 class="text-xl">3.</h1>
+          <p class="text-lg ml-4">ユーザー登録をして、私の米(まい)ランキングを登録しよう！<br>(あなたの米(まい)ランキングは、お米総選挙に投票されます)</p>
+        </div>
+        <div class="text-center mt-16">
+          <%= link_to "全国のお米を探しに行く", rice_map_path,
+            class: 'shadow w-1/4 my-8 bg-yellow-500 hover:bg-yellow-300 focus:shadow-outline focus:outline-none text-white font-bold py-4 px-8 rounded-full ' %>
+        </div>
+      </div>
+      <div class="w-1/2">
+        <%= image_tag 'image3.jpg', size: '300x500', class: 'h-auto max-w-lg rounded-xl mx-auto' %>
+      </div>
+    </div>
+
+    <div class="ml-4 my-32 flex">
+      <div class="w-1/2">
+        <%= image_tag 'image4.jpg', size: '300x500', class: 'h-auto max-w-lg rounded-xl mx-auto' %>
+      </div>
+      <div class="my-auto w-1/2">
+        <div class="flex justify-center items-center mb-4">
+          <h1 class="text-xl">4.</h1>
+          <p class="text-lg ml-4">お米好きのユーザーたちによって集計された<br>お米総選挙の結果を見にいこう！</p>
+        </div>
+        <div class="text-center mt-16">
+          <%= link_to "お米総選挙を見に行く", rice_ranking_path,
+          class: 'shadow w-1/4 my-8 bg-yellow-500 hover:bg-yellow-300 focus:shadow-outline focus:outline-none text-white font-bold py-4 px-8 rounded-full' %>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
