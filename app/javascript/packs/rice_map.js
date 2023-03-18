@@ -316,10 +316,6 @@
       'width': params.width,
       'height': params.height,
       'background-color': params.backgroundColor,
-      'border-width': params.lineWidth,
-      'border-color': params.lineColor,
-      'border-style': params.lineStyle,
-      'border-radius': params.backgroundRadius,
       'padding': params.backgroundPadding,
       'overflow': 'hidden'
     };
@@ -945,12 +941,13 @@ $(document).ready(function () {
         // クリックされた都道府県のお米のリンクをhtmlに追加する
         .done(function (prefectureRices) {
           $.each(prefectureRices, function (index, rice) { //モーダルボディーにお米の詳細リンクを記載する
-            $('#prefectureModal').find('.modal-body').append(
+            $('#prefectureModal').find('.modal-body-content').append(
               ` <a href="/rices/${rice.id}?keyword=${rice.name}"> ${rice.name} </a>` + '<br>');
           });
         })
 
-      $('#prefectureModal').find('#prefectureModalTitle').html(data.name + data.full); // モーダルのタイトルのhtml要素
+      $('#prefectureModal').find('#prefectureModalTitle').append(
+        ` <p class="py-4"> ${data.name + data.full} </p>` + '<br>');; // モーダルのタイトルのhtml要素
       $('#prefectureModal').show()
       $('#prefectureModal').addClass('show'); //クリックされた時にモーダルを表示するようにクラスを追加する
     },
@@ -961,10 +958,10 @@ $(document).ready(function () {
   //閉じた時に生成したお米詳細リンクを削除する
   $('#closeIcon').on('click', function () {
     $('#prefectureModal').removeClass('show').hide();
-    $('.modal-body').children().remove();
+    $('.modal-body-content').children().remove();
   });
   $('#closeString').on('click', function () {
     $('#prefectureModal').removeClass('show').hide();
-    $('.modal-body').children().remove();
+    $('.modal-body-content').children().remove();
   })
 });

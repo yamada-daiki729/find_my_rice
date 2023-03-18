@@ -1,10 +1,10 @@
 <% content_for(:title, "全国お米地図") %>
 <div class=" top-20 bottom-40 container">
-  <div class="container w-4/5 border-solid border-4 border-light-blue-500  ...">
+  <div class="container mb-8 w-4/5 bg-gray-50 rounded-2xl border-solid border-4 border-light-blue-500 ...">
     <div id="jmap" >
       <div class="jmap-infobox">
-        <h5 class="h5">全国のお米を探してみよう！</h5>
-        <p>地図をクリックするとモーダルが表示されます。</p>
+        <h5 class="h5 font-bold">全国のお米を探してみよう！</h5>
+        <p>地図をクリックすると都道府県のお米が表示されます。</p>
       </div>
     </div>
   </div>
@@ -18,7 +18,9 @@
                       <span  id="closeIcon" aria-hidden="true">&times;</span>
                   </button>
               </div>
-              <div class="modal-body overflow-auto" style="height:350px;">
+              <div class="modal-body overflow-auto d-flex justify-content-center" style="height:350px;">
+                <div class="modal-body-content">
+                </div>
               </div>
               <div class="modal-footer">
                   <button id="closeString" type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
@@ -27,30 +29,32 @@
       </div>
   </div>
 
-  <div class="w-4/5 border-solid border-4 border-light-blue-500 mx-auto   ...">
-    <div class="ml-8 ">
-      <h1 class="my-2">カテゴリー検索</h1>
-      <%= form_with model: @search_rices_form, scope: :q, url: rice_map_path,  method: :get do |f| %>
-        <%= f.label :name, 'お米の品種名' %>
-        <%= f.select :name, Rice.pluck(:name),{include_blank: '選択してください'},
-          class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+  <div class="text-center">
+    <div class="w-4/5 mb-8 mx-auto bg-gray-50 rounded-2xl border-solid border-4 border-light-blue-500">
+      <div class="">
+        <h1 class="my-2 text-lg font-bold">カテゴリー検索</h1>
+        <%= form_with model: @search_rices_form, scope: :q, url: rice_map_path, method: :get do |f| %>
+          <%= f.label :name, 'お米の品種名' %>
+          <%= f.select :name, Rice.pluck(:name), {include_blank: '選択してください'},
+            class: "mx-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
 
-        <%= f.label :rice_prefecture, '都道府県', class:"mt-2" %>
-        <%= f.select :rice_prefecture, Prefecture.names.map { |k, v| [ k , v ] },{include_blank: '選択してください'},
-          class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"%>
+          <%= f.label :rice_prefecture, '都道府県', class:"mt-2" %>
+          <%= f.select :rice_prefecture, Prefecture.names.map { |k, v| [ k , v ] }, {include_blank: '選択してください'},
+            class: "mx-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"%>
 
-        <%= f.label :status_category, 'お米の特徴', class:"mt-2" %>
-        <%= f.select :status_category, @status_category, {include_blank: '選択してください'},
-          class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"%>
+          <%= f.label :status_category, 'お米の特徴', class:"mt-2" %>
+          <%= f.select :status_category, @status_category, {include_blank: '選択してください'},
+            class: " mx-auto bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"%>
 
-        <%= f.submit '検索', class:"shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded my-4 ml-24" %>
-      <% end %>
+          <%= f.submit '検索', class:"shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 m-6 rounded" %>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div class="w-4/5 m-auto">
-    <div class="border-solid border-4 border-light-blue-500  ..." >
-      <h1 class="text-xl text-center my-4">検索結果</h1>
-      <div class="text-center">
+  <div class="w-4/5 mx-auto ">
+    <div class="mb-16 bg-gray-50 rounded-2xl border-solid border-4 border-light-blue-500 ..." >
+      <h1 class="text-lg text-center my-4 font-bold">検索結果</h1>
+      <div class="text-center mb-4">
         <% if params[:q] && params[:q].values.any?{|q| !q.empty? } %>
           <% if @rices.empty?%>
             <p>該当するお米がありません</p>
