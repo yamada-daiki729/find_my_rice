@@ -1,11 +1,11 @@
-<div id=<%="js-favorite-#{rice.id}"%>>
+<div class="ml-4" id=<%="js-favorite-#{rice.id}"%>>
   <% if rice.favorite_by?(current_user) %>
     <%= link_to rice_favorites_path(rice), method: :delete, remote: true do %>
-      <i class="fa-solid fa-heart"></i>
+      <i class="fa-solid fa-heart" style="color: #f00000;"></i>
     <% end %>
   <% else %>
     <%= link_to rice_favorites_path(rice), method: :post, remote:true do %>
-      <i class="fa-regular fa-heart"></i>
+      <i class="fa-regular fa-heart" style="color: #f00000;"></i>
     <% end %>
   <% end %>
 </div>
