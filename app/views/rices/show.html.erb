@@ -1,75 +1,71 @@
 <% content_for(:title, "#{@rice.name}詳細ページ") %>
-<div class="container flex ">
-  <div class="container text-center w-3/4 m-auto bg-yellow-100  h-auto border-double border-4 border-gray-500 rounded-lg ">
-    <h3 class="my-4 text-2xl"><%=  "品種名：#{@rice.name}" %> </h3>
-    <% if logged_in? %>
-      <div class="flex justify-center text-2xl ">
-        <p>お気に入り:　 </p>
-        <%= render partial: 'favorites/favorite', locals: {rice: @rice} %>
-      </div>
-      <div class=" justify-center text-2xl ">
-        <% if current_user.registered_myranking?(@rice)%>
-          <p>私の米（まい）ランキングに登録しています</p>
-        <% else %>
-          <p>私の米（まい）ランキングに登録する: </p>
-          <br>
-          <%= link_to "No.1に登録" ,user_rankings_path(current_user,rank: 1, rice: @rice),method: :post %>
-          <%= link_to "No.2に登録" ,user_rankings_path(current_user,rank: 2, rice: @rice),method: :post %>
-          <%= link_to "No.3に登録" ,user_rankings_path(current_user,rank: 3, rice: @rice),method: :post %>
-        <% end%>
-      </div>
-
-    <% end %>
-    <br>
-    <h2 class="text-2xl"> <%= "お米の特徴：#{@rice.characteristic}" %> </h2> <br>
-  </div>
-  <div class="ml-32 ">
-    <h1 class="text-center shadow bg-red-500 text-white font-bold py-2 w-60 mx-auto rounded mb-2 "> お米の特徴チャート </h1>
-    <div class="pmap ">
-        <div class="pmap_vaxis">
-            <span class="pmap_vaxis_title">食味</span>
-            <span class="pmap_vaxis_high">甘い</span>
-            <span class="pmap_vaxis_low">あっさり</span>
+    <div class="container text-center w-3/4 m-auto bg-gray-50  h-auto rounded-2xl border-solid border-4 border-light-blue-500 ">
+      <h3 class="my-4 text-2xl"><%=  "品種名：#{@rice.name}" %> </h3>
+      <% if logged_in? %>
+        <div class="flex justify-center text-2xl ">
+          <p>お気に入り: </p>
+          <%= render partial: 'favorites/favorite', locals: {rice: @rice} %>
         </div>
-        <div class="pmap_haxis">
-            <span class="pmap_haxis_title">食感</span>
-            <span class="pmap_haxis_high">柔らかい</span>
-            <span class="pmap_haxis_low">硬め</span>
+        <div class="">
+          <% if current_user.registered_myranking?(@rice)%>
+            <p class="text-2xl my-4">私の米（まい）ランキングに登録しています</p>
+          <% else %>
+            <p class="text-2xl mt-4">私の米（まい）ランキングに登録する</p>
+            <br>
+            <%= link_to "No.1に登録" ,user_rankings_path(current_user,rank: 1, rice: @rice),method: :post,class: "block mb-2" %>
+            <%= link_to "No.2に登録" ,user_rankings_path(current_user,rank: 2, rice: @rice),method: :post,class: "block mb-2" %>
+            <%= link_to "No.3に登録" ,user_rankings_path(current_user,rank: 3, rice: @rice),method: :post,class: "block mb-2" %>
+          <% end%>
         </div>
-        <div class="pmap_item">
-            <span style=<%= @rice.status_position %>> <i class="fa-solid fa-bowl-food"></i> </span>
-        </div>
+      <% end %>
+      <h2 class="text-2xl mt-2"> <%= "お米の特徴" %> </h2> <br>
+      <p class="mb-8"><%= @rice.characteristic %></p>
     </div>
-  </div>
-</div>
 
-<div class="rakuten_search w-1/2 mx-auto">
-    <div class="flex justify-center ">
-      <%= link_to '楽天で探してみる', "https://search.rakuten.co.jp/search/mall/#{params[:keyword]}",
-        class: 'shadow bg-red-500 hover:bg-red-300 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-8 rounded '  %>
+    <div class="my-8 mx-auto w-3/4 bg-gray-50 rounded-2xl border-solid border-4 border-light-blue-500 ...">
+      <p class="text-center shadow bg-red-500 text-white font-bold py-2 w-1/4 mx-auto rounded my-4 "> お米の特徴チャート </p>
+      <div class="pmap ">
+          <div class="pmap_vaxis">
+              <span class="pmap_vaxis_title">食味</span>
+              <span class="pmap_vaxis_high">甘い</span>
+              <span class="pmap_vaxis_low">あっさり</span>
+          </div>
+          <div class="pmap_haxis">
+              <span class="pmap_haxis_title">食感</span>
+              <span class="pmap_haxis_high">柔らかい</span>
+              <span class="pmap_haxis_low">硬め</span>
+          </div>
+          <div class="pmap_item">
+              <span style=<%= @rice.status_position %>> <i class="fa-solid fa-bowl-food"></i> </span>
+          </div>
+      </div>
     </div>
-  <div class='content'>
-    <div id='good_list' class="container">
-      <p class="text-center mt-4"><%= "↓#{@rice.name}の楽天検索結果はこちら！ ↓" %> </p>
-      <div class="">
-        <% if @items.present? %>
-          <% @items.first(3).each do |item| %>
-            <div class="list border-double border-4 border-gray-500 my-12 p-2">
-              <% if item.image? %>
-                <%= link_to item.url do %>
-                  <div class="flex justify-center">
-                    <%= image_tag item.medium_image_urls[0], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" unless item.medium_image_urls[0].nil? %>
-                    <%= image_tag item.medium_image_urls[1], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" unless item.medium_image_urls[1].nil? %>
-                    <%= image_tag item.medium_image_urls[2], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" unless item.medium_image_urls[2].nil? %>
-                  </div>
-                  <br>
-                  <%= item.name %>
-                <% end%>
-              <%end%>
-            </div>
+
+  <div class="rakuten_search w-3/4 mx-auto my-8 bg-gray-50 rounded-2xl border-solid border-4 border-light-blue-500 ...">
+      <div class="flex justify-center ">
+        <%= link_to '楽天で探してみる', "https://search.rakuten.co.jp/search/mall/#{params[:keyword]}",
+          class: 'shadow bg-red-500 hover:bg-red-300 focus:shadow-outline focus:outline-none text-white w-1/4 text-center font-bold py-2 px-8 rounded my-4'  %>
+      </div>
+    <div class='content'>
+      <div id='good_list' class="container">
+        <p class="text-center mt-4"><%= "↓#{@rice.name}の楽天検索結果はこちら！ ↓" %> </p>
+          <% if @items.present? %>
+            <% @items.first(3).each do |item| %>
+              <div class="list w-3/4 border-double border-4 border-gray-500 mx-auto my-8 p-2">
+                <% if item.image? %>
+                  <%= link_to item.url do %>
+                    <div class="flex justify-center">
+                      <%= image_tag item.medium_image_urls[0], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" unless item.medium_image_urls[0].nil? %>
+                      <%= image_tag item.medium_image_urls[1], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" unless item.medium_image_urls[1].nil? %>
+                      <%= image_tag item.medium_image_urls[2], style: "width: 100px;height: 100px;display: inline-block;", class: "mx-4" unless item.medium_image_urls[2].nil? %>
+                    </div>
+                    <br>
+                    <p><%= item.name %></p>
+                  <% end%>
+                <%end%>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
       </div>
     </div>
   </div>
-</div>

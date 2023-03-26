@@ -4,40 +4,117 @@
       <%= image_tag 'logo_blk.png', size: '250x600'%>
     <% end %>
   </div>
-  <div class="flex items-center">
-    <div class="flex text-center m-4">
-      <%= link_to rice_map_path do %>
-        <i class="fa-solid fa-map fa-2x"></i>
-        <p>全国お米地図</p>
-      <% end%>
+  <div class="flex items-center ">
+    <div class="flex hidden  sm:hidden md:hidden lg:flex xl:flex">
+      <div class="flex text-center m-4">
+        <%= link_to rice_map_path do %>
+          <i class="fa-solid fa-map fa-2x"></i>
+          <p>全国お米地図</p>
+        <% end%>
+      </div>
+      <div class="flex text-center m-4">
+        <%= link_to rice_ranking_path  do  %>
+          <i class="fa-solid fa-ranking-star fa-2x"></i>
+          <p>お米総選挙</p>
+        <% end %>
+      </div>
+      <div class="flex ">
+        <% if logged_in? %>
+          <%= link_to  users_path, class: "text-center m-4" do %>
+            <i class="fa-solid fa-user fa-2x"></i>
+            <p>マイページ</p>
+          <% end %>
+          <%= link_to logout_path, method: :delete, class: "text-center m-4" do %>
+            <i class="fa-solid fa-right-from-bracket fa-2x"></i>
+            <p>ログアウト</p>
+          <% end %>
+        <% else %>
+          <%= link_to  new_users_path, class: "text-center m-4" do %>
+            <i class="fa-solid fa-user-plus fa-2x"></i>
+            <p>ユーザー作成</p>
+          <% end %>
+          <%= link_to login_path, class: "text-center m-4" do %>
+            <i class="fa-solid fa-right-to-bracket fa-2x"></i>
+            <p>ログイン</p>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-    <div class="flex text-center m-4">
-      <%= link_to rice_ranking_path  do  %>
-        <i class="fa-solid fa-ranking-star fa-2x"></i>
-        <p>お米総選挙</p>
-      <% end %>
-    </div>
-    <div class="flex ">
-      <% if logged_in? %>
-        <%= link_to  users_path, class: "text-center m-4" do %>
-          <i class="fa-solid fa-user fa-2x"></i>
-          <p>マイページ</p>
-        <% end %>
-        <%= link_to logout_path, method: :delete, class: "text-center m-4" do %>
-          <i class="fa-solid fa-right-from-bracket fa-2x"></i>
-          <p>ログアウト</p>
-        <% end %>
-      <% else %>
-        <%= link_to  new_users_path, class: "text-center m-4" do %>
-          <i class="fa-solid fa-user-plus fa-2x"></i>
-          <p>ユーザー作成</p>
-        <% end %>
-        <%= link_to login_path, class: "text-center m-4" do %>
-          <i class="fa-solid fa-right-to-bracket fa-2x"></i>
-          <p>ログイン</p>
-        <% end %>
-      <% end %>
+    <div class="relative ">
+      <button id="MenuBar" type="button" class="mx-8 sm:flex md:flex lg:hidden xl:hidden items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900" aria-expanded="false">
+        <i class="fa-solid fa-bars fa-3x"></i>
+      </button>
+
+      <div id="MenuList" class="hidden absolute top-0 right-0 z-10 flex w-screen max-w-max -translate-x-1/2 px-4">
+        <div class="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
+          <div class="p-4">
+            <div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+              <div class="mx-auto">
+                <%= link_to rice_map_path do %>
+                  <i class="fa-solid fa-map fa-2x"></i>
+                  <span>全国お米地図</span>
+                <% end%>
+              </div>
+            </div>
+            <div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+              <div class="mx-auto">
+                <%= link_to rice_ranking_path  do  %>
+                  <i class="fa-solid fa-ranking-star fa-2x"></i>
+                  <span>お米総選挙</span>
+                <% end %>
+              </div>
+            </div>
+
+            <% if logged_in? %>
+              <div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+                <div class="mx-auto">
+                  <%= link_to  users_path, class: "text-center m-4" do %>
+                    <i class="fa-solid fa-user fa-2x"></i>
+                    <span>マイページ</span>
+                  <% end %>
+                </div>
+              </div>
+
+              <div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+                <div class="mx-auto">
+                  <%= link_to logout_path, method: :delete, class: "text-center m-4" do %>
+                    <i class="fa-solid fa-right-from-bracket fa-2x"></i>
+                    <span>ログアウト</span>
+                  <% end %>
+                </div>
+              </div>
+            <% else %>
+              <div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+                <div class="mx-auto">
+                  <%= link_to  new_users_path, class: "text-center m-4" do %>
+                    <i class="fa-solid fa-user-plus fa-2x"></i>
+                    <span>ユーザー作成</span>
+                  <% end %>
+                </div>
+              </div>
+
+              <div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+                <div class="mx-auto">
+                  <%= link_to login_path, class: "text-center m-4" do %>
+                    <i class="fa-solid fa-right-to-bracket fa-2x"></i>
+                    <span>ログイン</span>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+
+              <div class="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+                <div class="mx-auto">
+                  <button id="MenuClose" type="button" class="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900" aria-expanded="false">
+                    <i class="fas fa-window-close fa-2x"></i>
+                  </button>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
     </div>
   </div >
-
 </div>
+<%= javascript_pack_tag "header_menu" %>

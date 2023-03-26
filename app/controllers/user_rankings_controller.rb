@@ -1,5 +1,7 @@
 class UserRankingsController < ApplicationController
 
+  skip_before_action :require_login, only: %i[index]
+
   def index
     @ranking_data = UserRanking.rice_ranking_top7
   end
