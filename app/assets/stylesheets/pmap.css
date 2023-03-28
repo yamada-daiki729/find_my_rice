@@ -20,17 +20,17 @@
     linear-gradient(to right, #3388dd 0%, #3388dd 100%) center / 0.2em calc(100% - 1em) no-repeat,
     linear-gradient(to bottom, #3388dd 0%, #3388dd 100%) center / calc(100% - 1em) 0.2em no-repeat,
     /* 上矢印の三角形 */
-    linear-gradient(to bottom right, transparent 50%, #3388dd 50%) top -4px left calc(50% - 0.2em + 1px) / 0.4em 1em no-repeat,
-    linear-gradient(to bottom left, transparent 50%, #3388dd 50%) top -4px left calc(50% + 0.2em - 1px) / 0.4em 1em no-repeat,
+    linear-gradient(to bottom right, transparent 50%, #3388dd 50%) top 0px left calc(50% - 0.23em + 1px) / 0.4em 1em no-repeat,
+    linear-gradient(to bottom left, transparent 50%, #3388dd 50%) top 0px left calc(50% + 0.23em - 1px) / 0.4em 1em no-repeat,
     /* 右矢印の三角形 */
-    linear-gradient(to top left, transparent 50%, #3388dd 50%) top calc(50% + 0.2em - 1px) right -4px / 1em 0.4em no-repeat,
-    linear-gradient(to bottom left, transparent 50%, #3388dd 50%) top calc(50% - 0.2em + 1px) right -4px / 1em 0.4em no-repeat,
+    linear-gradient(to top left, transparent 50%, #3388dd 50%) top calc(50% + 0.23em - 1px) right 0px / 1em 0.4em no-repeat,
+    linear-gradient(to bottom left, transparent 50%, #3388dd 50%) top calc(50% - 0.23em + 1px) right 0px / 1em 0.4em no-repeat,
     /* 下矢印の三角形 */
-    linear-gradient(to top right, transparent 50%, #3388dd 50%) bottom -4px left calc(50% - 0.2em + 1px) / 0.4em 1em no-repeat,
-    linear-gradient(to top left, transparent 50%, #3388dd 50%) bottom -4px left calc(50% + 0.2em - 1px) / 0.4em 1em no-repeat,
+    linear-gradient(to top right, transparent 50%, #3388dd 50%) bottom 0px left calc(50% - 0.23em + 1px) / 0.4em 1em no-repeat,
+    linear-gradient(to top left, transparent 50%, #3388dd 50%) bottom 0px left calc(50% + 0.23em - 1px) / 0.4em 1em no-repeat,
     /* 左矢印の三角形 */
-    linear-gradient(to bottom right, transparent 50%, #3388dd 50%) top calc(50% - 0.2em + 1px) left -4px / 1em 0.4em no-repeat,
-    linear-gradient(to top right, transparent 50%, #3388dd 50%) top calc(50% + 0.2em - 1px) left -4px / 1em 0.4em no-repeat,
+    linear-gradient(to bottom right, transparent 50%, #3388dd 50%) top calc(50% - 0.23em + 1px) left 0px / 1em 0.4em no-repeat,
+    linear-gradient(to top right, transparent 50%, #3388dd 50%) top calc(50% + 0.23em - 1px) left 0px / 1em 0.4em no-repeat,
     /* 格子状の線 縦、横 */
     linear-gradient(to right, transparent 99%, #ddd 1%) top left / 10% 10% repeat,
     linear-gradient(to bottom, transparent 99%, #ddd 1%) top left / 10% 10% repeat;

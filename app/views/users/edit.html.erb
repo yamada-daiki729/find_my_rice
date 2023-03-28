@@ -1,5 +1,5 @@
 <% content_for(:title, "マイページ編集") %>
-<div class="bg-white py-6 sm:py-8 lg:py-12">
+<div class="bg-gray-50 mx-auto w-11/12 md:w-3/4 rounded-2xl py-6 sm:py-8 lg:py-12 border-solid border-4 border-light-blue-500 ">
   <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
     <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8">マイページ編集</h2>
     <%= form_with model: @user, url: users_path , local: true, class: "max-w-lg border rounded-lg mx-auto" do |f| %>
