@@ -230,7 +230,7 @@ RicePrefecture.create!(
 
     { prefecture_id: 42, rice_id: 44 },
     { prefecture_id: 42, rice_id: 35 },
-    { prefecture_id: 42, rice_id: 60 },
+    { prefecture_id: 42, rice_id: 60 }
   ]
 )
 
