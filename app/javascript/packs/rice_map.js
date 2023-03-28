@@ -947,7 +947,7 @@ $(document).ready(function () {
         })
 
       $('#prefectureModal').find('#prefectureModalTitle').append(
-        ` <p class="py-4"> ${data.name + data.full} </p>` + '<br>');; // モーダルのタイトルのhtml要素
+        ` <p class="py-4 text-center"> ${data.name + data.full} </p>`);; // モーダルのタイトルのhtml要素
       $('#prefectureModal').show()
       $('#prefectureModal').addClass('show'); //クリックされた時にモーダルを表示するようにクラスを追加する
     },
@@ -959,9 +959,11 @@ $(document).ready(function () {
   $('#closeIcon').on('click', function () {
     $('#prefectureModal').removeClass('show').hide();
     $('.modal-body-content').children().remove();
+    $('#prefectureModalTitle').children().remove();
   });
   $('#closeString').on('click', function () {
     $('#prefectureModal').removeClass('show').hide();
     $('.modal-body-content').children().remove();
+    $('#prefectureModalTitle').children().remove();
   })
 });

@@ -7,12 +7,13 @@ class UserRankingsController < ApplicationController
   end
 
   def create
+    rice = Rice.find(params[:rice])
     if current_user.user_rankings.find_by(rank: params[:rank].to_i)
       current_user.user_rankings.update(rank: params[:rank].to_i, rice_id: params[:rice].to_i)
     else
       current_user.user_rankings.create(rank: params[:rank].to_i, rice_id: params[:rice].to_i)
     end
-    redirect_back_or_to(rice_path(params[:rice]), success: '私の米（まい）ランキングに登録しました')
+    redirect_back_or_to(rice_path(params[:rice],keyword:"#{rice.name}"), success: '私の米（まい）ランキングに登録しました')
   end
 
   def destroy
