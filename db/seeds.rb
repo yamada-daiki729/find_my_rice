@@ -301,17 +301,3 @@ RiceStatus.create!(
     { rice_id: 60 , hardness: 2, softness: 0, sweetness: 3, freshness:0}
   ]
 )
-
-UserRanking.create!(
-  [
-    {rank:1, user_id:1, rice_id:1},
-    {rank:2, user_id:1, rice_id:2},
-    {rank:3, user_id:1, rice_id:3},
-    {rank:1, user_id:2, rice_id:3},
-    {rank:2, user_id:2, rice_id:4},
-    {rank:3, user_id:2, rice_id:5},
-    {rank:1, user_id:3, rice_id:3},
-    {rank:2, user_id:3, rice_id:6},
-    {rank:3, user_id:3, rice_id:2}
-  ]
-)
