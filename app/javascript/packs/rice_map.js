@@ -942,7 +942,7 @@ $(document).ready(function () {
         .done(function (prefectureRices) {
           $.each(prefectureRices, function (index, rice) { //モーダルボディーにお米の詳細リンクを記載する
             $('#prefectureModal').find('.modal-body-content').append(
-              ` <a href="/rices/${rice.id}?keyword=${rice.name}"> ${rice.name} </a>` + '<br>');
+              ` <a href="/rices/${rice.id}?keyword=${rice.name} ${data.name + data.full}"> ${rice.name} </a>` + '<br>');
           });
         })
 
@@ -952,7 +952,6 @@ $(document).ready(function () {
       $('#prefectureModal').addClass('show'); //クリックされた時にモーダルを表示するようにクラスを追加する
     },
     onHover: function (e, data) {
-      console.log(data);
     }
   });
   //閉じた時に生成したお米詳細リンクを削除する
