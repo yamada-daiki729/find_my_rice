@@ -17,5 +17,4 @@ class FavoritesController < ApplicationController
   def set_rice
     @rice = Rice.find(params[:rice_id])
   end
-
 end

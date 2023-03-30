@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 Rails.application.routes.draw do
   root to: 'top_page#top'
   resource :users, only: %i[new show create destroy edit update]
@@ -9,7 +8,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy', as: 'logout'
 
   get 'rice_map', to: 'rices#rice_map'
-  get 'rice_map/searches', to: 'rices#rice_map_serch', defaults: { format: :json }
+  get 'rice_map/searches', to: 'rices#rice_map_search', defaults: { format: :json }
   resources :rices, only: %i[show] do
     resource :favorites, only: %i[create destroy]
     collection do

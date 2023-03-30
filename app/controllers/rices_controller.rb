@@ -14,7 +14,7 @@ class RicesController < ApplicationController
     @rice = Rice.find(params[:id]) #あとでprivateに出す
   end
 
-  def rice_map_serch #rice_mapから送られてきたリクエストに対して送り返すメソッド
+  def rice_map_search #rice_mapから送られてきたリクエストに対して送り返すメソッド
     @map_serch_rices = Rice.includes(:prefectures).where(rice_prefectures:{prefecture_id: params[:prefectureId].to_i})
     respond_to do |format|
       format.html { redirect_to :root }
