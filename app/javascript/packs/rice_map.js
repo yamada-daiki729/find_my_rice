@@ -940,10 +940,14 @@ $(document).ready(function () {
       })
         // クリックされた都道府県のお米のリンクをhtmlに追加する
         .done(function (prefectureRices) {
-          $.each(prefectureRices, function (index, rice) { //モーダルボディーにお米の詳細リンクを記載する
-            $('#prefectureModal').find('.modal-body-content').append(
-              ` <a href="/rices/${rice.id}?keyword=${rice.name}"> ${rice.name} </a>` + '<br>');
-          });
+          if (prefectureRices.length === 0) {
+            $('#prefectureModal').find('.modal-body-content').append('<p>該当するお米がありません</p>');
+          } else {
+            $.each(prefectureRices, function (index, rice) {
+              $('#prefectureModal').find('.modal-body-content').append(
+                ` <a href="/rices/${rice.id}?keyword=${rice.name} ${data.name + data.full}"> ${rice.name} </a>` + '<br>');
+            });
+          }
         })
 
       $('#prefectureModal').find('#prefectureModalTitle').append(
@@ -952,7 +956,6 @@ $(document).ready(function () {
       $('#prefectureModal').addClass('show'); //クリックされた時にモーダルを表示するようにクラスを追加する
     },
     onHover: function (e, data) {
-      console.log(data);
     }
   });
   //閉じた時に生成したお米詳細リンクを削除する

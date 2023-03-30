@@ -52,5 +52,4 @@ class Admin::RicesController < Admin::BaseController
   def rice_params
     params.require(:rice).permit(:name, :characteristic)
   end
-
 end

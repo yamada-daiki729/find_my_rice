@@ -230,7 +230,7 @@ RicePrefecture.create!(
 
     { prefecture_id: 42, rice_id: 44 },
     { prefecture_id: 42, rice_id: 35 },
-    { prefecture_id: 42, rice_id: 60 },
+    { prefecture_id: 42, rice_id: 60 }
   ]
 )
 
@@ -299,19 +299,5 @@ RiceStatus.create!(
     { rice_id: 58 , hardness: 0, softness: 4, sweetness: 2, freshness:0},
     { rice_id: 59 , hardness: 2, softness: 0, sweetness: 2, freshness:0},
     { rice_id: 60 , hardness: 2, softness: 0, sweetness: 3, freshness:0}
-  ]
-)
-
-UserRanking.create!(
-  [
-    {rank:1, user_id:1, rice_id:1},
-    {rank:2, user_id:1, rice_id:2},
-    {rank:3, user_id:1, rice_id:3},
-    {rank:1, user_id:2, rice_id:3},
-    {rank:2, user_id:2, rice_id:4},
-    {rank:3, user_id:2, rice_id:5},
-    {rank:1, user_id:3, rice_id:3},
-    {rank:2, user_id:3, rice_id:6},
-    {rank:3, user_id:3, rice_id:2}
   ]
 )
