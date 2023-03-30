@@ -1,5 +1,5 @@
 class RicesController < ApplicationController
-  skip_before_action :require_login, only: %i[rice_map show rice_map_serch search_params]
+  skip_before_action :require_login, only: %i[rice_map show rice_map_search search_params]
 
   def rice_map
     @search_rices_form = SearchRicesForm.new(search_params)
@@ -15,11 +15,11 @@ class RicesController < ApplicationController
   end
 
   def rice_map_search #rice_mapから送られてきたリクエストに対して送り返すメソッド
-    @map_serch_rices = Rice.includes(:prefectures).where(rice_prefectures:{prefecture_id: params[:prefectureId].to_i})
+    @map_search_rices = Rice.includes(:prefectures).where(rice_prefectures:{prefecture_id: params[:prefectureId].to_i})
     respond_to do |format|
       format.html { redirect_to :root }
       # ↓検索結果のデータをレスポンスするコード
-      format.json { render json: @map_serch_rices }
+      format.json { render json: @map_search_rices }
     end
   end
 
