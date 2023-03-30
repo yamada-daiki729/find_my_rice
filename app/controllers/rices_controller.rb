@@ -3,7 +3,7 @@ class RicesController < ApplicationController
 
   def rice_map
     @search_rices_form = SearchRicesForm.new(search_params)
-    @rices = @search_rices_form.search
+    @rices = @search_rices_form.search.order(:name)
     @status_category = [['硬めで甘い',1], ['硬めであっさり',2],['柔らかくて甘い',3],['柔らかくてあっさり',4]]
   end
 
