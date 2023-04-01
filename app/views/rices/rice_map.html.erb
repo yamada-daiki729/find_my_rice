@@ -62,7 +62,7 @@
           <% else %>
             <% @rices.each do |rice| %>
               <div class="mb-2">
-                <%= link_to rice.name, rice_path(rice,keyword: rice.name) %>
+                <%= link_to rice.name, rice_path(rice,keyword:"米 #{rice.name}") %>
               </div>
             <% end %>
           <% end %>

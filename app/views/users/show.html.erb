@@ -19,7 +19,7 @@
         <% if @user.user_rankings.find_by(rank:1) %>
           <div class="flex">
             <p class="mr-4">No1</p>
-            <%= link_to  @user.user_rankings.find_by(rank:1).rice.name , rice_path(@user.user_rankings.find_by(rank:1).rice, keyword:@user.user_rankings.find_by(rank:1).rice.name) if @user.user_rankings.find_by(rank:1) %></p>
+            <%= link_to  @user.user_rankings.find_by(rank:1).rice.name , rice_path(@user.user_rankings.find_by(rank:1).rice, keyword:"米 #{@user.user_rankings.find_by(rank:1).rice.name}") if @user.user_rankings.find_by(rank:1) %></p>
             <%= link_to user_ranking_path(@user,rank: 1), method: :delete, data: { confirm: "私の米（まい）ランキングNo1を削除しますか？" }  do %>
               <i class="fa-solid fa-delete-left ml-4"></i>
             <% end%>
@@ -28,7 +28,7 @@
         <% if @user.user_rankings.find_by(rank:2) %>
           <div class="flex">
             <p class="mr-4">No2</p>
-            <%= link_to  @user.user_rankings.find_by(rank:2).rice.name , rice_path(@user.user_rankings.find_by(rank:2).rice, keyword:@user.user_rankings.find_by(rank:2).rice.name) if @user.user_rankings.find_by(rank:2)%></p>
+            <%= link_to  @user.user_rankings.find_by(rank:2).rice.name , rice_path(@user.user_rankings.find_by(rank:2).rice, keyword:"米 #{@user.user_rankings.find_by(rank:2).rice.name}") if @user.user_rankings.find_by(rank:2)%></p>
             <%= link_to user_ranking_path(@user,rank: 2), method: :delete, data: { confirm: "私の米（まい）ランキングNo2を削除しますか？" }  do %>
               <i class="fa-solid fa-delete-left ml-4"></i>
             <% end%>
@@ -37,7 +37,7 @@
         <% if @user.user_rankings.find_by(rank:3) %>
           <div class="flex">
             <p class="mr-4">No3</p>
-            <%= link_to  @user.user_rankings.find_by(rank:3).rice.name , rice_path(@user.user_rankings.find_by(rank:3).rice, keyword:@user.user_rankings.find_by(rank:3).rice.name) if @user.user_rankings.find_by(rank:3) %></p>
+            <%= link_to  @user.user_rankings.find_by(rank:3).rice.name , rice_path(@user.user_rankings.find_by(rank:3).rice, keyword:"米 #{@user.user_rankings.find_by(rank:3).rice.name}") if @user.user_rankings.find_by(rank:3) %></p>
             <%= link_to user_ranking_path(@user,rank: 3), method: :delete, data: { confirm: "私の米（まい）ランキングNo3を削除しますか？" }  do %>
               <i class="fa-solid fa-delete-left ml-4"></i>
             <% end%>
@@ -63,7 +63,7 @@
       <ul class="flex flex flex-col items-center">
         <% if @favorite_list.present? %>
           <% @favorite_list.each do |fav| %>
-            <li class="mb-2"> <%= link_to fav.rice.name, rice_path(fav.rice, keyword: fav.rice.name) %> </li>
+            <li class="mb-2"> <%= link_to fav.rice.name, rice_path(fav.rice, keyword:"米 #{fav.rice.name}") %> </li>
           <% end%>
         <% else %>
           <li> まだお米のお気に入り登録をしていません </li>

@@ -11,7 +11,7 @@
           <% else %>
             <p class="text-center text-bold"><%=  "No.#{i+1}" %></p>
           <% end %>
-          <%= link_to rice_path(rice,keyword: rice.name ), class:"mx-auto my-auto" do %>
+          <%= link_to rice_path(rice,keyword:"米 #{rice.name}" ), class:"mx-auto my-auto" do %>
             <p class="text-center m-2 "><%= "#{rice.name}" %></p>
           <% end %>
         </div>
