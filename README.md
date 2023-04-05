@@ -61,3 +61,7 @@
 　メイン機能実装：12/27 - 1/27
 　β版をRUNTEQ内リリース（MVP）：1/31〆切
 　本番リリース：2月17日
+
+
+　■URL
+https://www.find-my-rice.com
