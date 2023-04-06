@@ -55,13 +55,5 @@
   https://gyazo.com/3e609e3327300ce48105cf11151fb36f
 
 
-　■スケジュール
-　企画〜技術調査：12/24〆切
-　README〜ER図作成：12/26 〆切
-　メイン機能実装：12/27 - 1/27
-　β版をRUNTEQ内リリース（MVP）：1/31〆切
-　本番リリース：2月17日
-
-
 　■URL
 https://www.find-my-rice.com
