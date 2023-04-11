@@ -5,6 +5,9 @@ class Rice < ApplicationRecord
   has_many :user_rankings, dependent: :destroy
   has_one :rice_status, dependent: :destroy
 
+  validates :name, presence: true
+  validates :characteristic, length: { maximum: 200}
+
   scope :search_name, ->(name) { where('rice.name LIKE ?', "%#{name}%") }
   scope :search_prefecture, ->(prefecture_id) { joins(:prefectures).where(prefectures:{id: prefecture_id})}
   #カテゴリー検索のステータスカテゴリ別にSQLを分岐しているスコープ
