@@ -69,7 +69,6 @@ RSpec.describe User, type: :model do
       @user1.password = "test"
       @user1.password_confirmation = nil
       @user1.valid?
-      byebug
       expect(@user1.errors.full_messages).to include("パスワード（確認用）を入力してください")
     end
   end
