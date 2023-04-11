@@ -1,7 +1,7 @@
 class RicesController < ApplicationController
-  skip_before_action :require_login, only: %i[rice_map show rice_map_search search_params]
+  skip_before_action :require_login, only: %i[index show index_search search_params]
 
-  def rice_map
+  def index
     @search_rices_form = SearchRicesForm.new(search_params)
     @rices = @search_rices_form.search.order(:name)
     @status_category = RiceStatus.categories
@@ -14,7 +14,7 @@ class RicesController < ApplicationController
     @rice = Rice.find(params[:id]) #あとでprivateに出す
   end
 
-  def rice_map_search #rice_mapから送られてきたリクエストに対して送り返すメソッド
+  def index_search #indexから送られてきたリクエストに対して送り返すメソッド
     @map_search_rices = Rice.includes(:prefectures).where(rice_prefectures:{prefecture_id: params[:prefectureId].to_i})
     respond_to do |format|
       format.html { redirect_to :root }

@@ -934,7 +934,7 @@ $(document).ready(function () {
     onSelect: function (e, data) {
       $.ajax({
         type: 'GET',
-        url: '/rice_map/searches',
+        url: '/rices/search',
         data: ("prefectureId=" + data.code),
         dataType: 'json'
       })

@@ -7,9 +7,8 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy', as: 'logout'
 
-  get 'rice_map', to: 'rices#rice_map'
-  get 'rice_map/searches', to: 'rices#rice_map_search', defaults: { format: :json }
-  resources :rices, only: %i[show] do
+  get 'rices/search', to: 'rices#index_search', defaults: { format: :json }
+  resources :rices, only: %i[show index] do
     resource :favorites, only: %i[create destroy]
     collection do
       get 'search'

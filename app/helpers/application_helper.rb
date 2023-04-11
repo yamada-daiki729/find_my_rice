@@ -43,4 +43,8 @@ module ApplicationHelper
     message = "&text=【私の米（まい）ランキングはこれです!】%0a%0a  No1. #{ user.user_rankings.find_by(rank:1).rice.name }%0a%0a  No2. #{ user.user_rankings.find_by(rank:2).rice.name }%0a%0a  No3. #{ user.user_rankings.find_by(rank:3).rice.name }%0a%0a"
     return message
   end
+
+  def rice_ranking_for_user(rice_id, user)
+    user.user_rankings.find_by(rice_id:rice_id).rank
+  end
 end
