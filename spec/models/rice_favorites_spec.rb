@@ -15,7 +15,7 @@ RSpec.describe RiceFavorite, type: :model do
     expect(rice_favorite).to be_valid
   end
 
-  it 'userに対して複数のRiceFavoriteを登録できる' do
+  it 'userは複数のRiceFavorite(お気に入り)を登録できる' do
     rice2 = Rice.create(name: 2)
     rice_favorite = RiceFavorite.create(user_id:@user.id, rice_id:@rice.id)
     rice_favorite2 = RiceFavorite.create(user_id:@user.id, rice_id:rice2.id)

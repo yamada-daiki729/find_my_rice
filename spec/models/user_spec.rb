@@ -14,7 +14,6 @@ RSpec.describe User, type: :model do
   end
 
   it 'デフォルトのroleがgeneralになっているか' do
-    byebug
     expect(@user1.role).to eq("general")
   end
 
