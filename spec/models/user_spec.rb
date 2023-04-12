@@ -13,6 +13,11 @@ RSpec.describe User, type: :model do
     expect(@user1).to be_valid
   end
 
+  it 'デフォルトのroleがgeneralになっているか' do
+    byebug
+    expect(@user1.role).to eq("general")
+  end
+
   describe 'バリデーション' do
     it 'ユーザー名がnilの時バリデーションで弾かれる' do
       @user1.name = nil
