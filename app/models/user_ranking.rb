@@ -2,9 +2,9 @@ class UserRanking < ApplicationRecord
   belongs_to :user
   belongs_to :rice
 
-  validates :rank, uniqueness: { scope: [:user_id, :rice_id] }
-  validates :rank, uniqueness: { scope: :user_id }
-  validates :user_id, uniqueness: { scope: :rice_id }
+  validates :rank, presence: true, uniqueness: { scope: [:user_id, :rice_id] }
+  validates :rank, uniqueness: { scope: :user_id ,message: "が既に登録されています"}
+  validates :rice_id, uniqueness: { scope: :user_id ,message: "が既に登録されています"}
 
   def self.rice_ranking_top7
     rice_points = {}
