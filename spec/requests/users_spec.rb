@@ -20,9 +20,7 @@ RSpec.describe "Users", type: :request do
     context "バリデーションに弾かれないリクエストが" do
       it "ユーザー作成が成功しステータスコード201が返ってくること" do
         before_user_count = User.all.count
-        expect {
-          post "/users", params: { user: valid_attributes }
-        }.to change(User, :count).by(1)
+        post "/users", params: { user: valid_attributes }
         after_user_count = User.all.count
 
         # ユーザーのカウントが増えているか
@@ -52,7 +50,7 @@ RSpec.describe "Users", type: :request do
     end
   end
 
-    describe "GET /users/edit" do
+  describe "GET /users/edit" do
     it "ユーザー編集画面" do
       user = User.create(
         name:"test",
@@ -68,7 +66,4 @@ RSpec.describe "Users", type: :request do
       expect(response).to have_http_status(200)
     end
   end
-
-
-  # 他のエンドポイントに対するテストを追加
 end
