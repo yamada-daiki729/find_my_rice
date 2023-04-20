@@ -22,7 +22,6 @@ class Admin::UsersController < Admin::BaseController
 
   def update
     @user = User.find(params[:id])
-    byebug
     if @user.update(user_params)
       redirect_to admin_users_path, success: 'ユーザー情報を更新しました'
     else

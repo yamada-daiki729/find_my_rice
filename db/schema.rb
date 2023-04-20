@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_08_205353) do
+ActiveRecord::Schema.define(version: 2023_04_12_070916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2023_03_08_205353) do
     t.integer "freshness"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["rice_id"], name: "index_rice_statuses_on_rice_id"
+    t.index ["rice_id"], name: "index_rice_statuses_on_rice_id", unique: true
   end
 
   create_table "user_rankings", force: :cascade do |t|
