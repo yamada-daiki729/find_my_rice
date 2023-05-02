@@ -114,7 +114,7 @@ RicePrefecture.create!(
     { prefecture_id: 9, rice_id: 20 },
     { prefecture_id: 9, rice_id: 21 },
     { prefecture_id: 9, rice_id: 22 },
-    { prefecture_id: 10, rice_id: 20 },#20に変更予定
+    { prefecture_id: 10, rice_id: 20 },#20に変更完了
     { prefecture_id: 10, rice_id: 24 },
     { prefecture_id: 11, rice_id: 25 },
     { prefecture_id: 11, rice_id: 26 },
@@ -261,7 +261,7 @@ RiceStatus.create!(
     { rice_id: 20 , hardness: 4, softness: 0, sweetness: 0, freshness:4},
     { rice_id: 21 , hardness: 4, softness: 0, sweetness: 0, freshness:5},
     { rice_id: 22 , hardness: 0, softness: 2, sweetness: 0, freshness:3},
-    { rice_id: 23 , hardness: 4, softness: 0, sweetness: 0, freshness:2},#削除予定
+    # { rice_id: 23 , hardness: 4, softness: 0, sweetness: 0, freshness:2},#削除予定
     { rice_id: 24 , hardness: 2, softness: 0, sweetness: 0, freshness:4},
     { rice_id: 25 , hardness: 1, softness: 0, sweetness: 0, freshness:1},
     { rice_id: 26 , hardness: 0, softness: 1, sweetness: 0, freshness:3},
@@ -272,7 +272,7 @@ RiceStatus.create!(
     { rice_id: 31 , hardness: 0, softness: 4, sweetness: 0, freshness:4},
     { rice_id: 32 , hardness: 2, softness: 0, sweetness: 0, freshness:2},
     { rice_id: 33 , hardness: 1, softness: 0, sweetness: 6, freshness:0},
-    { rice_id: 34 , hardness: 0, softness: 1, sweetness: 1, freshness:0}, #かぶっていたので削除
+    # { rice_id: 34 , hardness: 0, softness: 1, sweetness: 1, freshness:0}, #かぶっていたので削除
     { rice_id: 35 , hardness: 0, softness: 3, sweetness: 3, freshness:0},
     { rice_id: 36 , hardness: 0, softness: 1, sweetness: 0, freshness:3},
     { rice_id: 37 , hardness: 4, softness: 0, sweetness: 0, freshness:3},
