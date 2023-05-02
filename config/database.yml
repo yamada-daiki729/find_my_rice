@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # PostgreSQL. Versions 9.3 and up are supported.
 #
 # Install the pg driver:
@@ -17,44 +18,35 @@
 default: &default
   adapter: postgresql
   encoding: utf8
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: find_my_rice
-  password:
-  host: localhost
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  host: db
 
 development:
   adapter: postgresql
   encoding: utf8
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: find_my_rice
-  password:
-  host: localhost
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  host: db
   database: find_my_rice_development
 
 test:
   adapter: postgresql
   encoding: utf8
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: find_my_rice
-  password:
-  host: localhost
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  host: db
   database: find_my_rice_test
 
-#
 production:
   adapter: postgresql
   encoding: utf8
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: find_my_rice
-  password:
-  host: localhost
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  host: db
   password: <%= ENV['FIND_MY_RICE_DATABASE_PASSWORD'] %>
   database: find_my_rice_production
