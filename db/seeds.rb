@@ -39,7 +39,7 @@ Rice.create!(
     { name: 'あさひの夢', characteristic: ' やや大粒で、粘り気がそこまで強くないため口当たりもよくさっぱりした味。' }, #20
     { name: 'とちぎの星', characteristic: '大粒で豊かな甘さがあり、炊飯後も粒がしっかりしている。' }, #21
     { name: 'なすひかり', characteristic: '食味がよく、お米の粒が大きいのでしっかりとした味わいが特徴。' }, #22
-    { name: 'あさひの夢', characteristic: 'やや大粒で、粘り気がそこまで強くないため口当たりもよくさっぱり味です。' }, #23
+    # { name: 'あさひの夢', characteristic: 'やや大粒で、粘り気がそこまで強くないため口当たりもよくさっぱり味です。' }, #23 20番とかぶっていたので削除
     { name: 'ゴロピカリ', characteristic: '粒厚が薄くて丸みがある形.コシヒカリと月の光から生まれたお米' }, #24
     { name: '彩のきずな', characteristic: 'さっぱりとした味わいとしっかりとした食感が特徴' }, #25
     { name: '彩のかがやき', characteristic: '少し粒が小ぶりでさっぱりしている味わいが特徴。' }, #26
@@ -50,7 +50,7 @@ Rice.create!(
     { name: 'こしいぶき', characteristic: 'コシヒカリのおいしさを受け継いだ味や香り、つや、粘りが特徴。コシヒカリよりもあっさりしている' }, #31
     { name: '新之助', characteristic: '大粒できれいなツヤがあり、ほんのりとした香り、豊潤な甘みとコク、しっかりした粘りと弾力が特徴' }, #32
     { name: '富富富', characteristic: '粒ぞろいが良く、つややかで透明感のあるお米' }, #33
-    { name: 'きぬむすめ', characteristic: '"とても白く艷やかな炊きあがり、粘りが強く、やや柔らかめの食感"' }, #34
+    # { name: 'きぬむすめ', characteristic: '"とても白く艷やかな炊きあがり、粘りが強く、やや柔らかめの食感"' }, #34 45番とかぶっていたので削除
     { name: 'にこまる', characteristic: '粒ぞろいが良く、炊きあがりはふっくらつやつやで、もちもちの食感が特徴' }, #35
     { name: 'みねあさひ', characteristic: '米粒はやや小粒ですが、まるまるとし、光沢がある' }, #36
     { name: 'あいちのかおり', characteristic: 'ミネノアサヒから受け継いだ粘りを持ち、あっさりとした口当たりでくせが少なく、存在感があって食べごたえのある。' }, #37
@@ -114,7 +114,7 @@ RicePrefecture.create!(
     { prefecture_id: 9, rice_id: 20 },
     { prefecture_id: 9, rice_id: 21 },
     { prefecture_id: 9, rice_id: 22 },
-    { prefecture_id: 10, rice_id: 23 },
+    { prefecture_id: 10, rice_id: 20 },#20に変更完了
     { prefecture_id: 10, rice_id: 24 },
     { prefecture_id: 11, rice_id: 25 },
     { prefecture_id: 11, rice_id: 26 },
@@ -130,7 +130,8 @@ RicePrefecture.create!(
     { prefecture_id: 16, rice_id: 33 },
     { prefecture_id: 20, rice_id: 17 },
     { prefecture_id: 22, rice_id: 17 },
-    { prefecture_id: 22, rice_id: 34 },
+    # { prefecture_id: 22, rice_id: 34 },かぶっていたので削除
+    { prefecture_id: 22, rice_id: 45 }, #新しく作成
     { prefecture_id: 22, rice_id: 35 },
     { prefecture_id: 23, rice_id: 36 },
     { prefecture_id: 23, rice_id: 37 },
@@ -260,7 +261,7 @@ RiceStatus.create!(
     { rice_id: 20 , hardness: 4, softness: 0, sweetness: 0, freshness:4},
     { rice_id: 21 , hardness: 4, softness: 0, sweetness: 0, freshness:5},
     { rice_id: 22 , hardness: 0, softness: 2, sweetness: 0, freshness:3},
-    { rice_id: 23 , hardness: 4, softness: 0, sweetness: 0, freshness:2},
+    # { rice_id: 23 , hardness: 4, softness: 0, sweetness: 0, freshness:2},#削除予定
     { rice_id: 24 , hardness: 2, softness: 0, sweetness: 0, freshness:4},
     { rice_id: 25 , hardness: 1, softness: 0, sweetness: 0, freshness:1},
     { rice_id: 26 , hardness: 0, softness: 1, sweetness: 0, freshness:3},
@@ -271,7 +272,7 @@ RiceStatus.create!(
     { rice_id: 31 , hardness: 0, softness: 4, sweetness: 0, freshness:4},
     { rice_id: 32 , hardness: 2, softness: 0, sweetness: 0, freshness:2},
     { rice_id: 33 , hardness: 1, softness: 0, sweetness: 6, freshness:0},
-    { rice_id: 34 , hardness: 0, softness: 1, sweetness: 1, freshness:0},
+    # { rice_id: 34 , hardness: 0, softness: 1, sweetness: 1, freshness:0}, #かぶっていたので削除
     { rice_id: 35 , hardness: 0, softness: 3, sweetness: 3, freshness:0},
     { rice_id: 36 , hardness: 0, softness: 1, sweetness: 0, freshness:3},
     { rice_id: 37 , hardness: 4, softness: 0, sweetness: 0, freshness:3},
