@@ -46,7 +46,6 @@ production:
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV['POSTGRES_USER'] %>
-  password: <%= ENV['POSTGRES_PASSWORD'] %>
-  host: db
   password: <%= ENV['FIND_MY_RICE_DATABASE_PASSWORD'] %>
-  database: find_my_rice_production
+  host: <%= ENV['FIND_MY_RICE_DATABASE_HOST'] %>
+  database: <%= ENV['FIND_MY_RICE_DATABASE'] %>
