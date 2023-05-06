@@ -21,3 +21,4 @@ services:
       POSTGRES_USER: find_my_rice
       POSTGRES_PASSWORD: password
       POSTGRES_DB: find_my_rice_development
+      RAILS_SERVE_STATIC_FILES: 'true'
